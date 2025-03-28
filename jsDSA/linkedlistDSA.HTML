@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linked list</title>
+</head>
+
+<body>
+    <script>
+        class ListNode {
+            constructor(value) {
+                this.value = value
+                this.next = null
+            }
+        }
+
+        class LinkedList {
+            constructor(head = null) {
+                this.head = head;
+            }
+
+            
+
+
+            printList() {
+                //Creates an empty array.
+                let printArrayList = [];
+                //Pointer which points to the head node
+                let currentNode = this.head;
+                //Start iterating from the first node till you reach the last node
+                if(currentNode==null){
+                    console.log("linked list is empty");
+                    return;
+                }
+                while (currentNode !== null) {
+                    // console.log(currentNode.value);
+                    //Add every node's value to the array
+                    printArrayList.push(currentNode.value);
+                    //Point pointer to the next node
+                    currentNode = currentNode.next;
+                }
+                //Return the array
+                
+                return printArrayList.join(' -> ');
+            }
+
+
+            //list.head.next.data
+
+
+            size() {
+                let count = 0;
+                let node = this.head;
+                while (node) {
+                    count++;
+                    node = node.next
+                }
+                return count;
+            }
+
+            clear() {
+                this.head = null;
+                return 'linked list empty now'
+            }
+
+            getLast() {
+                let lastNode = this.head;
+                if (lastNode) {
+                    while (lastNode.next) {
+                        lastNode = lastNode.next
+                    }
+                }
+                return lastNode
+            }
+
+            getFirst() {
+                return this.head;
+            }
+
+
+            insertAtBeginning(data) {
+                // A newNode object is created with property data and next = null
+                let newNode = new ListNode(data);
+                // The pointer next is assigned head pointer so that both pointers now point at the same node.
+                newNode.next = this.head;
+                // As we are inserting at the beginning the head pointer needs to now point at the newNode.
+                this.head = newNode;
+                return this.head;
+            }
+
+            insertAtEnd(data) {
+                // A newNode object is created with property data and next=null
+                let newNode = new ListNode(data);
+                // When head = null i.e. the list is empty, then head itself will point to the newNode.
+                if (!this.head) {
+                    this.head = newNode;
+                    return this.head;
+                }
+                // Else, traverse the list to find the tail (the tail node will initially be pointing at null), and update the
+                //tail's next pointer.
+                let tail = this.head;
+                while (tail.next !== null) {
+                    tail = tail.next;
+                }
+                tail.next = newNode;
+                return this.head;
+            }
+
+
+            // A helper function getAt() is defined to get to the desired position. This function can also be later used
+            // for performing delete operation from a given position.
+            getAt(index) {
+                let counter = 0;
+                let current = this.head;
+                while (current!=null) {
+                    if (counter === index) {
+                        return current;
+                    }
+                    counter++;
+                    current = current.next;
+                }
+                return null;
+            }
+
+
+            // The insertAt() function contains the steps to insert a node at a given index.
+            insertAt(data, index) {
+                // if the list is empty i.e. head = null
+                if (!this.head) {
+                    this.head = new Node(data);
+                    return;
+                }
+                // if new node needs to be inserted at the front of the list i.e. before the head.
+                if (index === 0) {
+                    this.head = new Node(data, this.head);
+                    return;
+                }
+                // else, use getAt() to find the previous node.
+                const previous = this.getAt(index - 1);
+                let newNode = new ListNode(data);
+                newNode.next = previous.next;
+                previous.next = newNode;
+                return this.head
+            }
+
+
+
+            deleteFirstNode() {
+                if (!this.head) {
+                    return;
+                }
+                this.head = this.head.next;
+                return this.head;
+            }
+
+
+            deleteLastNode() {
+                if (!this.head) {
+                    return null;
+                }
+                // if only one node in the list
+                if (!this.head.next) {
+                    this.head = null;
+                    return;
+                }
+                let previous = this.head;
+                let tail = this.head.next;
+                while (tail.next !== null) {
+                    previous = tail;
+                    tail = tail.next;
+                }
+                previous.next = null;
+                return this.head;
+            }
+
+
+            deleteAt(index) {
+                // when list is empty i.e. head = null
+                if (!this.head) {
+                    this.head = new ListNode(data);
+                    return;
+                }
+                // node needs to be deleted from the front of the list i.e. before the head.
+                if (index === 0) {
+                    this.head = this.head.next;
+                    return;
+                }
+                // else, use getAt() to find the previous node.
+                const previous = this.getAt(index - 1);
+                if (!previous || !previous.next) {
+                    return;
+                }
+                previous.next = previous.next.next;
+                return this.head
+            }
+
+
+
+            deleteList() {
+                this.head = null;
+            }
+
+
+
+        }
+
+        // let node1 = new ListNode(1);
+        // let node2 = new ListNode(2);
+        // let node3 = new ListNode(3);
+        // node1.next = node2;
+        // let list = new LinkedList(node1);
+        // console.log(list.head.next.value);
+        // console.log(list.head.value);
+        // console.log(list.printList());
+        // console.log(`linked list size ${list.size()}`)
+        // let node4 = new ListNode(4);
+        // console.log(`${list.clear()}  ,linked list size ${list.size()}`)
+
+        let node5 = new ListNode(5);
+        let node6 = new ListNode(6);
+       
+
+        node5.next = node6;
+        let list1 = new LinkedList(node5);
+        console.log(list1.printList());
+        console.log(list1.getFirst());
+        console.log(list1.getLast());
+
+        list1.insertAtBeginning(0);
+        console.log(`insertAtBeginning ${list1.printList()}`);
+        list1.insertAtEnd(7);
+        console.log(`insertAtEnd ${list1.printList()}`);
+        //console.log(`get index to insert something there  ${list1.getAt(2)}`);
+
+        console.log(`insert 16 at index 1  ${list1.insertAt(16,1)}, is ${list1.printList()}`);
+
+        
+
+        list1.deleteFirstNode();
+        console.log(`delete first node using list1.deleteFirstNode() new linked list is ${list1.printList()}`);
+
+        list1.deleteLastNode();
+        console.log(`delete last node using list1.deleteLastNode() new linked list is ${list1.printList()}`);
+        
+        console.log(`before deleting at node 2 using list1.deleteAt(2)  ${list1.printList()}`);
+        list1.deleteAt(2);
+        console.log(`delete at node 2 using list1.deleteAt(2) new linked list is ${list1.printList()}`);
+
+
+
+        list1.clear();
+        console.log(list1.printList());
+
+        list1.insertAtBeginning(2);
+        console.log(list1.printList());
+
+        list1.insertAtBeginning(1);
+        console.log(list1.printList());
+
+        list1.insertAtBeginning(0);
+        console.log(list1.printList());
+
+        list1.insertAtEnd(3);
+        console.log(list1.printList());
+
+        list1.insertAtEnd(4);
+        console.log(list1.printList());
+
+        list1.insertAtEnd(5);
+        console.log(list1.printList());
+
+        list1.insertAt(16,6);
+        console.log(list1.printList());
+
+        list1.deleteFirstNode();
+        console.log(list1.printList());
+
+        list1.deleteLastNode();
+        console.log(list1.printList());
+
+        console.log(Math.floor((list1.size())/2));
+
+        list1.deleteAt(Math.floor((list1.size())/2));
+        console.log(list1.printList());
+
+
+
+
+
+        
+
+
+
+
+
+    </script>
+</body>
+
+</html>

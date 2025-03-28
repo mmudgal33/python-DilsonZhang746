@@ -1,0 +1,2295 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>doubly linked list method function object based M3</title>
+</head>
+
+<body>
+    <script>
+        /**
+ * Javascript implementation of Doubly Linked list
+ * 
+ * Dinesh
+ *
+ * (More to come) (Add more error handling scenarios)
+ */
+
+        // Global object (namespace)
+        DS = {};
+
+        /**
+         * DList Nodes
+         * 
+         */
+        DS.DListNode = function () {
+            this.item = null;
+            this.next = null;
+            this.prev = null;
+        }
+
+        /**
+         * DLinkedList object
+         */
+        DS.DLinkedList = function () {
+            this.head = null;
+            this.tail = null;
+            var size = 0;
+
+            //Insert Nodes
+            this.insertNode = function (item) {
+                var node = new DS.DListNode();
+                node.item = item;
+                if (this.head == null) {
+                    this.head = node;
+                    this.tail = node;
+                    this.tail.next = null;
+                    this.tail.prev = null;
+                    size += 1;
+                } else {
+                    var prev = this.tail;
+                    this.tail.next = node;
+                    this.tail = node;
+                    this.tail.prev = prev;
+                    size += 1;
+                }
+            }
+
+            //Insert node in the first location
+            this.insertFirst = function (item) {
+                var node = new DS.DListNode();
+                node.item = item;
+                node.next = this.head;
+                this.head.prev = node;
+                this.head = node;
+                size += 1;
+            }
+
+            // Delete First node
+            this.deleteFirstNode = function () {
+                if (this.head != null) {
+                    this.head = this.head.next;
+                    this.head.prev = null;
+                    size -= 1;
+                } else {
+                    console.log("Linked list is empty");
+                }
+            }
+
+            // Print Nodes
+            this.printNodes = function () {
+                if (size < 1) console.log("No node present in the Doubly Linked List");
+
+                var current = this.head;
+                for (var i = 0; i < size; i++) {
+                    if (current.prev == null)
+                        console.log("Node " + current.item + " is at location " + i + " : Previous Node: null : Next Node: " + current.next.item);
+                    else if (current.next == null)
+                        console.log("Node " + current.item + " is at location " + i + " : Previous Node: " + current.prev.item + " : Next Node: null");
+                    else console.log("Node " + current.item + " is at location " + i + " : Previous Node: " + current.prev.item + " : Next Node: " + current.next.item);
+                    current = current.next;
+                }
+            }
+
+            // Get node Size
+            this.getSize = function () {
+                return size;
+            }
+        }
+
+        var list = new DS.DLinkedList();
+        list.insertNode("test1");
+        list.insertNode("test2");
+        list.insertNode("test3");
+        list.insertNode("test4");
+        list.insertNode("test5");
+        list.insertNode("test6");
+        list.printNodes();
+
+        console.log("Adding item in the start");
+        list.insertFirst("test1st");
+        list.printNodes();
+
+        console.log("Deleting first node");
+        list.deleteFirstNode();
+        list.printNodes();
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>doubly linked list M1</title>
+</head>
+
+<body>
+    <script>
+        function createNode(value) {
+            return {
+                value: value,
+                next: null,
+                previous: null,
+            };
+        }
+
+
+        class DoublyLinkedList {
+            constructor() {
+                this.head = null;
+                this.tail = null;
+                this.length = 0;
+            }
+
+
+
+
+            // insert at end
+            insert(value) {
+                this.length++;
+                let newNode = createNode(value);
+                if (this.tail) {
+                    // list is not empty
+                    this.tail.next = newNode;
+                    newNode.previous = this.tail;
+                    this.tail = newNode;
+                    return newNode;
+                }
+                this.head = this.tail = newNode;
+                return newNode;
+            }
+
+
+
+            // remove from end
+            remove() {
+                if (this.tail) {
+                    this.length--;
+                    const removedTail = this.tail;
+                    this.tail = this.tail.previous;
+                    if (this.tail) {
+                        this.tail.next = null;
+                    } else {
+                        this.head = null;
+                    }
+                    return removedTail;
+                }
+                return undefined;
+            }
+
+
+
+            printList() {
+                //Creates an empty array.
+                
+                let printArrayList = [];
+                let dLinkedList = [];
+
+                //Pointer which points to the head node
+                let currentNode = this.head;
+                //Start iterating from the first node till you reach the last node
+                while (currentNode !== null) {
+                    //Add every node's value to the array
+                    dLinkedList.push(currentNode.value);
+                    printArrayList.push([currentNode.previous?.value,currentNode.value,currentNode.next?.value]);
+                    //Point pointer to the next node
+                    currentNode = currentNode.next;
+                }
+                //Return the array
+                return [printArrayList.join(' -> '),dLinkedList.join(' -> ')];
+            }
+
+
+
+            print() {
+                let current = this.head;
+                while (current) {
+                    console.log(
+                        `${current.previous?.value} ${current.value} ${current.next?.value}`
+                    );
+                    current = current.next;
+                }
+            }
+
+
+
+
+
+            
+
+
+
+
+            insertHead(value) {
+                this.length++;
+                let newNode = createNode(value);
+                if (this.head) {
+                    this.head.previous = newNode;
+                    newNode.next = this.head;
+                    this.head = newNode;
+                    return newNode;
+                }
+                this.head = this.tail = newNode;
+                return newNode;
+            }
+
+
+
+            removeHead() {
+                if (this.head) {
+                    this.length--;
+                    const removedHead = this.head;
+                    this.head = this.head.next;
+                    if (this.head) {
+                        this.head.previous = null;
+                    } else {
+                        this.tail = null;
+                    }
+                    return removedHead;
+                }
+                return undefined;
+            }
+
+
+            insertIndex(value, index) {
+                if (index >= this.length) {
+                    throw new Error("Insert index out of bounds");
+                }
+                if (index === 0) {
+                    return this.insertHead(value);
+                }
+                this.length++;
+                let currentNode = this.head;
+                for (let i = 0; i < index; i++) {
+                    currentNode = currentNode.next;
+                }
+                const previousNode = currentNode.previous;
+                const newNode = createNode(value);
+                newNode.next = currentNode;
+                newNode.previous = previousNode;
+                previousNode.next = newNode;
+                currentNode.previous = newNode;
+                return newNode;
+            }
+
+
+            // remove at specific index
+            removeIndex(index) {
+                if (index >= this.length) {
+                    throw new Error("Remove index out of bounds");
+                }
+                if (index === 0) {
+                    return this.removeHead();
+                }
+                this.length--;
+                let currentNode = this.head;
+                for (let i = 0; i < index; i++) {
+                    currentNode = currentNode.next;
+                }
+                const previousNode = currentNode.previous;
+                const nextNode = currentNode.next;
+                previousNode.next = nextNode;
+                nextNode.previous = previousNode;
+                return currentNode;
+            }
+
+
+        }
+
+
+
+
+
+
+
+        const dLinkedList = new DoublyLinkedList();
+        dLinkedList.insert(7);
+        //console.log(dLinkedList.print());
+
+        dLinkedList.insert(8);
+        //console.log(dLinkedList.print());
+
+        dLinkedList.insert(9);
+        //dLinkedList.print();
+        console.log(dLinkedList.printList());
+
+        dLinkedList.remove();
+        //dLinkedList.print();
+        console.log(dLinkedList.printList());
+
+        dLinkedList.insertHead(6);
+        console.log(dLinkedList.printList());
+
+        dLinkedList.removeHead();
+        console.log(dLinkedList.printList());
+
+        dLinkedList.insertIndex(6,0);
+        console.log(dLinkedList.printList());
+
+        dLinkedList.removeIndex(1);
+        console.log(dLinkedList.printList());
+
+
+        
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>doubly linked list M2</title>
+</head>
+
+<body>
+    <script>
+
+        
+
+        
+
+        // let Node = function (element) {
+        //     this.element = element;
+        //     this.next = null;
+        //     this.prev = null;
+        // }
+
+
+
+        // function doubleLinkedList() {
+        let doubleLinkedList = function (element) {
+            let Node = function (element) {
+                this.element = element;
+                this.next = null;
+                this.prev = null;
+            }
+            let length = 0;
+            let head = null;
+            let tail = null;
+            //Add new element
+            this.append = function (element) {
+                let node = new Node(element),
+                    current = head,
+                    previous;
+                if (!head) {
+                    head = node;
+                    tail = node;
+                } else {
+                    node.prev = tail;
+                    tail.next = node;
+                    tail = node;
+                }
+                length++;
+            }
+            //Add element
+            this.insert = function (position, element) {
+                //Check of out-of-bound values
+                if (position >= 0 && position <= length) {
+                    let node = new Node(element),
+                        current = head,
+                        previous,
+                        index = 0;
+                    if (position === 0) {
+                        if (!head) {
+                            head = node;
+                            tail = node;
+                        } else {
+                            node.next = current;
+                            current.prev = node;
+                            head = node;
+                        }
+                    } else if (position === length) {
+                        current = tail;
+                        current.next = node;
+                        node.prev = current;
+                        tail = node;
+                    } else {
+                        while (index++ < position) {
+                            previous = current;
+                            current = current.next;
+                        }
+                        node.next = current;
+                        previous.next = node;
+                        //New
+                        current.prev = node;
+                        node.prev = previous;
+                    }
+                    length++;
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            //Remove element at any position
+            this.removeAt = function (position) {
+                //look for out-of-bounds value
+                if (position > -1 && position < length) {
+                    let current = head, previous, index = 0;
+                    //Removing first item
+                    if (position === 0) {
+                        head = current.next;
+                        //if there is only one item, update tail //NEW
+                        if (length === 1) {
+                            tail = null;
+                        } else {
+                            head.prev = null;
+                        }
+                    } else if (position === length - 1) {
+                        current = tail;
+                        tail = current.prev;
+                        tail.next = null;
+                    } else {
+                        while (index++ < position) {
+                            previous = current;
+                            current = current.next;
+                        }
+                        //link previous with current's next - skip it
+                        previous.next = current.next;
+                        current.next.prev = previous;
+                    }
+                    length--;
+                    return current.element;
+                } else {
+                    return null;
+                }
+            }
+            //Get the indexOf item
+            this.indexOf = function (elm) {
+                let current = head,
+                    index = -1;
+                //If element found then return its position
+                while (current) {
+                    if (elm === current.element) {
+                        return ++index;
+                    }
+                    index++;
+                    current = current.next;
+                }
+                //Else return -1
+                return -1;
+            };
+            //Find the item in the list
+            this.isPresent = (elm) => {
+                return this.indexOf(elm) !== -1;
+            };
+            //Delete an item from the list
+            this.delete = (elm) => {
+                return this.removeAt(this.indexOf(elm));
+            };
+            //Delete first item from the list
+            this.deleteHead = function () {
+                this.removeAt(0);
+            }
+            //Delete last item from the list
+            this.deleteTail = function () {
+                this.removeAt(length - 1);
+            }
+            //Print item of the string
+            this.toString = function () {
+                let current = head,
+                    string = '';
+                while (current) {
+                    string += current.element + (current.next ? '\n' : '');
+                    current = current.next;
+                }
+                return string;
+            };
+            //Convert list to array
+            this.toArray = function () {
+                let arr = [],
+                    current = head;
+                while (current) {
+                    arr.push(current.element);
+                    current = current.next;
+                }
+                return arr;
+            };
+            //Check if list is empty
+            this.isEmpty = function () {
+                return length === 0;
+            };
+            //Get the size of the list
+            this.size = function () {
+                return length;
+            }
+            //Get the head
+            this.getHead = function () {
+                return head;
+            }
+            //Get the tail
+            this.getTail = function () {
+                return tail;
+            }
+        }
+
+
+
+
+        DS={};
+        var list = new doubleLinkedList();
+        list.append(2);
+        list.append(3);
+        list.append(4);
+        list.append(5);
+        list.append(6);
+        list.append(7);
+        list.append(8);
+        list.append(9);
+        list.append(10);
+        list.append(11);
+        list.append(12);
+        
+        
+        console.log(list.size(),list.toArray());
+        
+        //console.log(list.isEmpty());
+        console.log(list.getHead());
+        console.log(list.size(),list.toArray());
+        console.log(list.getTail());
+        console.log(list.size(),list.toArray());
+        console.log(list.toString());
+        console.log(list.size(),list.toArray());
+        console.log(list.deleteTail());
+        console.log(list.size(),list.toArray());
+        console.log(list.deleteHead());
+        console.log(list.size(),list.toArray());
+        console.log(list.isPresent(4));
+        console.log(list.size(),list.toArray());
+        console.log(list.delete(9));
+        console.log(list.size(),list.toArray());
+        console.log(list.indexOf(4));
+        console.log(list.size(),list.toArray());
+        console.log(list.removeAt(2));
+        console.log(list.size(),list.toArray());
+        console.log(list.insert(3,6));
+        console.log(list.size(),list.toArray());
+
+
+        
+
+
+
+
+
+
+
+
+        
+
+
+
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linked list method 2</title>
+</head>
+
+<body>
+    <script>
+
+        class Node {
+            constructor(value) {
+                this.value = value,
+                    this.next = null
+            }
+        }
+
+        class LinkedList {
+            //Creates a linkedlist with passed value.
+            constructor(value) {
+                //Creates a head node
+                this.head = {
+                    value: value,
+                    next: null
+                };
+                //As there is only one element in the list, head is also a tail
+                this.tail = this.head;
+                //Length would be 1
+                this.length = 1;
+            }
+
+
+            printList() {
+                //Creates an empty array.
+                let printArrayList = [];
+                //Pointer which points to the head node
+                let currentNode = this.head;
+                //Start iterating from the first node till you reach the last node
+                while (currentNode !== null) {
+                    //Add every node's value to the array
+                    printArrayList.push(currentNode.value);
+                    //Point pointer to the next node
+                    currentNode = currentNode.next;
+                }
+                //Return the array
+                return printArrayList.join(' -> ');
+            }
+
+
+
+            //Add the node at the tail of the linkedlist
+            append(value) {
+                //Create a new Node by creating a instance of a Node class
+                const newNode = new Node(value);
+                // Check if head is present or not, if head is empty creates a head
+                if (this.head == null) {
+                    this.head = node;
+                }
+                else { //Else creates a tail
+                    //We need to point current tail's next to the newNode
+                    this.tail.next = newNode;
+                    //Now make newNode a tail node
+                    this.tail = newNode;
+                    //Increase the length by 1
+                    this.length++;
+                }
+                return this;
+            }
+
+
+
+
+            //Add the node as a head of the linkedlist
+            prepend(value) {
+                //Create a new Node by creating a instance of a Node class
+                const newNode = new Node(value);
+                //Points this node's next to the head
+                newNode.next = this.head;
+                //Now make this node a head node
+                this.head = newNode;
+                //Increase the length by 1
+                this.length++;
+                return this;
+            }
+
+
+
+
+            //Insertes a node at specified index, say we want to insert 30 at index 2
+            //Current list: 10 -> 20 -> 40 -> 50
+            insert(index, value) {
+                //Create a new Node by creating a instance of a Node class
+                const newNode = new Node(value);
+                //Counter to loop
+                let count = 1;
+                //Create a temp node to traverse through list, which will start from the head node
+                //Pointing to 10
+                let previousNode = this.head;
+                //Traverse the list one node before the specified index, which is previous node
+                while (count < index) {
+                    //Point previous node to next for iterating
+                    previousNode = previousNode.next;
+                    //Increase the count to compare it with index;
+                    count++;
+                }
+                //When the loop ends you will be able to have a previous node. Which is 20 in this example.
+                //First, points new node's next to the previous node's next, so it can hold the list ahead of its index
+                //New node = 30, So new node will be 30 -> 40 -> 50
+                newNode.next = previousNode.next;
+                //Now just point previous node's next to new node.
+                //Merge left side of the list, 10 -> 20 -> 30 -> 40 -> 50
+                previousNode.next = newNode;
+                return this;
+            }
+
+
+
+
+            deleteHead() {
+                this.head = this.head.next;
+                this.length--;
+                return this;
+            }
+
+
+
+
+
+            deleteTail() {
+                let secondLastNode = this.head;
+                while (secondLastNode.next.next !== null) {
+                    secondLastNode = secondLastNode.next;
+                }
+                secondLastNode.next = null;
+                this.length--;
+                return this;
+            }
+
+
+
+
+
+            deleteAtIndex(index) {
+                //Check if index is head
+                if (index === 0) {
+                    //Appoint head to the next element
+                    this.head = this.head.next;
+                    this.length--;
+                    return this;
+                }
+                let count = 1;
+                let previousNode = this.head;
+                while (count < index) {
+                    previousNode = previousNode.next;
+                    count++;
+                }
+                previousNode.next = previousNode.next.next;
+                this.length--;
+                return this;
+            }
+
+
+
+            deleteNodeByValue(value) {
+                //Current node to loop through the list
+                let currentNode = this.head;
+                //Previous node to update its pointer to next.next node
+                let previousNode = null;
+                while (currentNode != null) {
+                    //Check if we find the value we are looking for
+                    if (currentNode.value === value) {
+                        //Check if it is a head or not by comparing previous node with null
+                        if (previousNode === null) {
+                            //If it is head, then update head to nextnode
+                            this.head = currentNode.next;
+                        }
+                        else {
+                            //If it is not head then simply update previous node
+                            previousNode.next = currentNode.next;
+                        }
+                        //Reduce length by 1
+                        this.length--;
+                    }
+                    //Previous node will point to this node with every iteration
+                    previousNode = currentNode;
+                    //Current node will point to next node for iteration
+                    currentNode = currentNode.next;
+                }
+                return this;
+            }
+
+
+
+
+
+            searchElement(value) {
+                let currentNode = this.head;
+                while (currentNode !== null) {
+                    if (currentNode.value === value) return true;
+                    currentNode = currentNode.next;
+                }
+                return false;
+            }
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+        const myLinkedList = new LinkedList(20);
+        console.log(myLinkedList.printList());
+
+        myLinkedList.append(40).append(50);
+        console.log(myLinkedList.printList());
+
+        myLinkedList.prepend(10);
+        console.log(myLinkedList.printList());
+
+        myLinkedList.insert(2, 30);
+        console.log(myLinkedList.printList());
+
+        myLinkedList.insert(1, 15);
+        console.log(myLinkedList.printList());
+
+        myLinkedList.deleteHead();
+        console.log(myLinkedList.printList());
+
+        myLinkedList.deleteTail();
+        console.log(myLinkedList.printList());
+
+        myLinkedList.deleteAtIndex(2);
+        console.log(myLinkedList.printList());
+
+        myLinkedList.deleteNodeByValue(40);
+        console.log(myLinkedList.printList());
+
+        console.log(myLinkedList.searchElement(20));
+
+
+
+
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linked list method 1</title>
+</head>
+
+<body>
+    <script>
+        class ListNode {
+            constructor(value) {
+                this.value = value
+                this.next = null
+            }
+        }
+
+        class LinkedList {
+            constructor(head = null) {
+                this.head = head;
+            }
+
+
+
+
+            // Almabetter pdf code copy
+            // printList() {
+            //     //Creates an empty array.
+            //     let printArrayList = [];
+            //     //Pointer which points to the head node
+            //     let currentNode = this.head;
+            //     //Start iterating from the first node till you reach the last node
+            //     while (currentNode !== null) {
+            //         //Add every node's value to the array
+            //         printArrayList.push(currentNode.value);
+            //         //Point pointer to the next node
+            //         currentNode = currentNode.next;
+            //     }
+            //     //Return the array
+            //     return printArrayList.join(' -> ');
+            // }
+
+
+            printList() {
+                //Creates an empty array.
+                let printArrayList = [];
+                //Pointer which points to the head node
+                let currentNode = this.head;
+                //Start iterating from the first node till you reach the last node
+                if(currentNode==null){
+                    console.log("linked list is empty");
+                    return;
+                }
+                while (currentNode !== null) {
+                    // console.log(currentNode.value);
+                    //Add every node's value to the array
+                    printArrayList.push(currentNode.value);
+                    //Point pointer to the next node
+                    currentNode = currentNode.next;
+                }
+                //Return the array
+                
+                return printArrayList.join(' -> ');
+            }
+
+
+            //list.head.next.data
+
+
+            size() {
+                let count = 0;
+                let node = this.head;
+                while (node) {
+                    count++;
+                    node = node.next
+                }
+                return count;
+            }
+
+            clear() {
+                this.head = null;
+                return 'linked list empty now'
+            }
+
+            getLast() {
+                let lastNode = this.head;
+                if (lastNode) {
+                    while (lastNode.next) {
+                        lastNode = lastNode.next
+                    }
+                }
+                return lastNode
+            }
+
+            getFirst() {
+                return this.head;
+            }
+
+
+            insertAtBeginning(data) {
+                // A newNode object is created with property data and next = null
+                let newNode = new ListNode(data);
+                // The pointer next is assigned head pointer so that both pointers now point at the same node.
+                newNode.next = this.head;
+                // As we are inserting at the beginning the head pointer needs to now point at the newNode.
+                this.head = newNode;
+                return this.head;
+            }
+
+            insertAtEnd(data) {
+                // A newNode object is created with property data and next=null
+                let newNode = new ListNode(data);
+                // When head = null i.e. the list is empty, then head itself will point to the newNode.
+                if (!this.head) {
+                    this.head = newNode;
+                    return this.head;
+                }
+                // Else, traverse the list to find the tail (the tail node will initially be pointing at null), and update the
+                //tail's next pointer.
+                let tail = this.head;
+                while (tail.next !== null) {
+                    tail = tail.next;
+                }
+                tail.next = newNode;
+                return this.head;
+            }
+
+
+            // A helper function getAt() is defined to get to the desired position. This function can also be later used
+            // for performing delete operation from a given position.
+            getAt(index) {
+                let counter = 0;
+                let current = this.head;
+                while (current!=null) {
+                    if (counter === index) {
+                        return current;
+                    }
+                    counter++;
+                    current = current.next;
+                }
+                return null;
+            }
+
+
+            // The insertAt() function contains the steps to insert a node at a given index.
+            insertAt(data, index) {
+                // if the list is empty i.e. head = null
+                if (!this.head) {
+                    this.head = new Node(data);
+                    return;
+                }
+                // if new node needs to be inserted at the front of the list i.e. before the head.
+                if (index === 0) {
+                    this.head = new Node(data, this.head);
+                    return;
+                }
+                // else, use getAt() to find the previous node.
+                const previous = this.getAt(index - 1);
+                let newNode = new ListNode(data);
+                newNode.next = previous.next;
+                previous.next = newNode;
+                return this.head
+            }
+
+
+
+            deleteFirstNode() {
+                if (!this.head) {
+                    return;
+                }
+                this.head = this.head.next;
+                return this.head;
+            }
+
+
+            deleteLastNode() {
+                if (!this.head) {
+                    return null;
+                }
+                // if only one node in the list
+                if (!this.head.next) {
+                    this.head = null;
+                    return;
+                }
+                let previous = this.head;
+                let tail = this.head.next;
+                while (tail.next !== null) {
+                    previous = tail;
+                    tail = tail.next;
+                }
+                previous.next = null;
+                return this.head;
+            }
+
+
+            deleteAt(index) {
+                // when list is empty i.e. head = null
+                if (!this.head) {
+                    this.head = new ListNode(data);
+                    return;
+                }
+                // node needs to be deleted from the front of the list i.e. before the head.
+                if (index === 0) {
+                    this.head = this.head.next;
+                    return;
+                }
+                // else, use getAt() to find the previous node.
+                const previous = this.getAt(index - 1);
+                if (!previous || !previous.next) {
+                    return;
+                }
+                previous.next = previous.next.next;
+                return this.head
+            }
+
+
+
+            deleteList() {
+                this.head = null;
+            }
+
+
+            deleteNodeByValue(value){
+                let currentNode=this.head;
+                let previousNode=null;
+                while(currentNode!=null){
+                    if(currentNode.value==value){
+                        if(previousNode==null){
+                            this.head=currentNode.next;
+                        } else {
+                            previousNode.next=currentNode.next;
+                        }
+                    }
+                    previousNode=currentNode;
+                    currentNode=currentNode.next;
+                }
+            }
+
+
+            searchElement(value){
+                let currentNode=this.head;
+                while(currentNode!==null){
+                    if(currentNode.value==value) return true;
+                    currentNode=currentNode.next;
+                }
+                return false
+            }
+
+
+
+        }
+
+        // let node1 = new ListNode(1);
+        // let node2 = new ListNode(2);
+        // let node3 = new ListNode(3);
+        // node1.next = node2;
+        // let list = new LinkedList(node1);
+        // console.log(list.head.next.value);
+        // console.log(list.head.value);
+        // console.log(list.printList());
+        // console.log(`linked list size ${list.size()}`)
+        // let node4 = new ListNode(4);
+        // console.log(`${list.clear()}  ,linked list size ${list.size()}`)
+
+        let node5 = new ListNode(5);
+        let node6 = new ListNode(6);
+       
+
+        node5.next = node6;
+        let list1 = new LinkedList(node5);
+        console.log(list1.printList());
+        console.log(list1.getFirst());
+        console.log(list1.getLast());
+
+        list1.insertAtBeginning(0);
+        console.log(`insertAtBeginning ${list1.printList()}`);
+        list1.insertAtEnd(7);
+        console.log(`insertAtEnd ${list1.printList()}`);
+        //console.log(`get index to insert something there  ${list1.getAt(2)}`);
+
+        console.log(`insert 16 at index 1  ${list1.insertAt(16,1)}, is ${list1.printList()}`);
+
+        
+
+        list1.deleteFirstNode();
+        console.log(`delete first node using list1.deleteFirstNode() new linked list is ${list1.printList()}`);
+
+        list1.deleteLastNode();
+        console.log(`delete last node using list1.deleteLastNode() new linked list is ${list1.printList()}`);
+        
+        console.log(`before deleting at node 2 using list1.deleteAt(2)  ${list1.printList()}`);
+        list1.deleteAt(2);
+        console.log(`delete at node 2 using list1.deleteAt(2) new linked list is ${list1.printList()}`);
+
+
+
+
+
+
+        list1.clear();
+        console.log(list1.printList());
+
+        list1.insertAtBeginning(2);
+        console.log(list1.printList());
+
+        list1.insertAtBeginning(1);
+        console.log(list1.printList());
+
+        list1.insertAtBeginning(0);
+        console.log(list1.printList());
+
+        list1.insertAtEnd(3);
+        console.log(list1.printList());
+
+        list1.insertAtEnd(4);
+        console.log(list1.printList());
+
+        list1.insertAtEnd(5);
+        console.log(list1.printList());
+
+        list1.insertAt(16,6);
+        console.log(list1.printList());
+
+        list1.deleteFirstNode();
+        console.log(list1.printList());
+
+        list1.deleteLastNode();
+        console.log(list1.printList());
+
+        console.log(Math.floor((list1.size())/2));
+
+        list1.deleteAt(Math.floor((list1.size())/2));
+        console.log(list1.printList());
+
+        list1.deleteNodeByValue(5);
+        console.log(list1.printList());
+
+        console.log(list1.searchElement(2));
+
+        // list1.searchElement(2);
+        // console.log(list1.printList());
+
+
+
+
+
+
+
+        
+
+
+
+
+
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>searching algorithm</title>
+</head>
+
+<body>
+    <script>
+        // function linearSearch(value, list) {
+        //     let found = false;
+        //     let position = -1;
+        //     let index = 0;
+        //     while (!found && index < list.length) {
+        //         if (list[index] == value) {
+        //             found = true;
+        //             position = index;
+        //         } else {
+        //             index += 1;
+        //         }
+        //     }
+        //     return position;
+        // }
+
+
+        // let list=[243,45,23,56,365];
+        // let value=56;
+        // console.log(list,linearSearch(value, list))
+
+
+
+
+
+        // //note that list must be sorted for this function to work
+        // function binarySearch(value, list) {
+        //     let low = 0; //left endpoint
+        //     let high = list.length - 1; //right endpoint
+        //     let position = -1;
+        //     let found = false;
+        //     let mid;
+        //     while (found === false && low <= high) {
+        //         mid = Math.floor((low + high) / 2);
+        //         if (list[mid] == value) {
+        //             found = true;
+        //             position = mid;
+        //         } else if (list[mid] > value) { //if in lower half
+        //             high = mid - 1;
+        //         } else { //in in upper half
+        //             low = mid + 1;
+        //         }
+        //     }
+        //     return position;
+        // }
+
+
+        // // in binary search list must be sorted
+        // let list=[243,45,23,56,365];
+        // let value=56;
+        // console.log(list,linearSearch(value, list))
+
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Algorithms</title>
+</head>
+
+<body>
+    <script>
+
+        ////////////////////////////////////// BUBBLE SORT
+
+
+
+        // function bubbleSort(arr){
+        //     let n=arr.length;
+        //     let i,j;
+        //     let isSwapped=false;
+        //     for(i=0;i<n;i++){
+        //         for(j=0;j<n;j++){
+        //             if(arr[j]>arr[j+1]){
+        //                 let temp=arr[j];
+        //                 arr[j]=arr[j+1];
+        //                 arr[j+1]=temp;
+        //                 isSwapped=true;
+        //             }
+        //         }
+        //         if(!isSwapped){
+        //             break;
+        //         }
+        //     }
+        // }
+
+        // let arr=[243,45,23,56,365];
+        // console.log("original array",arr);
+        // bubbleSort(arr);
+        // console.log("sorted array",arr)
+
+
+
+
+        ////////////////////////////////////// SELECTION SORT
+
+
+
+
+
+        // function selectionSort(arr){
+        //     let i,j,min_index;
+        //     let n=arr.length;
+        //     for(i=0;i<n;i++){
+        //         min_index=i;
+        //         for(j=i+1;j<n;j++){
+        //             if(arr[j]<arr[min_index]){
+        //                 min_index=j;
+        //             }
+        //         }
+        //         swap(arr,min_index,i);
+        //     }
+        // }
+
+        // function swap(arr,x,y){
+        //     var temp=arr[x];
+        //     arr[x]=arr[y];
+        //     arr[y]=temp;
+        // }
+
+        // let arr=[23,45,1,12,3];
+        // console.log("original array",arr);
+        // selectionSort(arr);
+        // console.log("sorted array",arr)
+
+
+
+        ////////////////////////////////////// INSERTION SORT
+
+
+        // function insertionSort(arr){
+        //     let i,key,j;
+        //     let n=arr.length;
+        //     for(i=0;i<n;i++){
+        //         key=arr[i];
+        //         j=i-1;
+        //         while(j>=0 && arr[j]>key){
+        //             arr[j+1]=arr[j]
+        //             j=j-1;
+        //         }
+        //         arr[j+1]=key;
+        //     }
+        // }
+
+        // let arr=[12,13,11,5,6];
+        // console.log("original array",arr);
+        // insertionSort(arr);
+        // console.log("sorted array",arr)
+
+
+
+        ////////////////////////////////////// MERGE SORT METHOD 1 (not running)
+
+
+
+
+
+
+
+        // function mergeSortMergeFunction(arr, low, mid, high) {
+        //     let leftArrarLength = mid - low + 1;
+        //     let rightArrayLength = high - mid;
+        //     let left = [];
+        //     let right = [];
+        //     for (let i = 0; i < leftArrarLength; i++) {
+        //         left[i] = arr[low + i];
+        //     }
+        // }
+
+
+
+        // // 
+        // function mergeSort(arr, left, right) {
+
+        //     // if(arr.length<=1) return arr;
+        //     // const left=arr.splice(0,mid);
+        //     // const right=arr;
+        //     // let left=0;
+        //     // let right=arr.length;
+
+        //     if (left < right) {
+        //         let mid = left + (right - left) / 2;
+        //         mergeSort(arr, left, mid);
+        //         mergeSort(arr, mid + 1, right);
+        //         mergeSortMergeFunction(arr, left, mid, right);
+        //     }
+        // }
+
+
+
+        // console.log(merge([3, 4, 7], [2, 5]))
+
+
+
+
+
+
+
+
+
+        // let arr = [150, 87, 2, 9, 4, 2];
+        // console.log("original array", arr);
+        // let result = mergeSort(arr);
+        // console.log("sorted array", result);
+
+
+
+
+        ////////////////////////////////////// MERGE SORT METHOD 2
+
+
+
+
+
+        // function merge(left,right){
+        //     let sortedArray=[];
+        //     while(left.length && right.length){
+        //         if(left[0]<right[0]){
+        //             sortedArray.push(left.shift());
+        //         }
+        //         else{
+        //             sortedArray.push(right.shift());
+        //         }
+        //     }
+        //     return [...sortedArray,...left,...right]
+        // }
+
+
+
+        // function mergeSort(arr){
+        //     let mid=Math.floor(arr.length/2);
+        //     if(arr.length<=1) return arr;
+        //     const left=arr.splice(0,mid);
+        //     const right=arr;
+        //     // const right=arr.splice(mid,arr.length);
+        //     const leftSortedArray=mergeSort(left);
+        //     const rightSortedArray=mergeSort(right);
+        //     const mergedArray=merge(leftSortedArray,rightSortedArray);
+        //     return mergedArray;
+        // }
+
+
+        // let arr=[150,87,2,9,4,2];
+        // console.log("original array",arr);
+        // let result=mergeSort(arr);
+        // console.log("sorted array",result);
+
+
+
+
+
+        /////////////////////////////////////// MERGE SORT METHOD 3
+
+        // function merge(left, right) {
+        //     let sortedArr = []; // the sorted elements will go here
+        //     while (left.length && right.length) {
+        //         // insert the smallest element to the sortedArr
+        //         if (left[0] < right[0]) {
+        //             sortedArr.push(left.shift());
+        //         } else {
+        //             sortedArr.push(right.shift());
+        //         }
+        //     }
+        //     // use spread operator and create a new array, combining the three arrays
+        //     return [...sortedArr, ...left, ...right];
+        // }
+
+
+
+
+        // function mergeSort(arr) {
+        //     const half = arr.length / 2;
+        //     // the base case is array length <=1
+        //     if (arr.length <= 1) {
+        //         return arr;
+        //     }
+        //     const left = arr.splice(0, half); // the first half of the array
+        //     const right = arr;
+        //     return merge(mergeSort(left), mergeSort(right));
+        // }
+
+        // //merge([3, 4, 7], [2, 5]);
+        // let arr = [150, 87, 2, 9, 4, 2];
+        // console.log(mergeSort(arr));
+
+
+
+
+
+
+        //////////////////////////////////// Quick Sort
+
+
+
+        // function swap(arr, i, j) {
+        //     const temp = arr[i];
+        //     arr[i] = arr[j];
+        //     arr[j] = temp;
+        // }
+
+
+        // function partition(arr, low, high) {
+        //     // pivot
+        //     const pivot = arr[high];
+        //     // Index of smaller element and
+        //     // indicates the right position
+        //     // of pivot found so far
+        //     let i = (low - 1);
+        //     for (let j = low; j <= high - 1; j++) {
+        //         // If current element is smaller
+        //         // than the pivot
+        //         if (arr[j] < pivot) {
+        //             // Increment index of
+        //             // smaller element
+        //             i++;
+        //             swap(arr, i, j);
+        //         }
+        //     }
+        //     swap(arr, i + 1, high);
+        //     return (i + 1);
+        // }
+
+
+        // function quickSort(arr, low, high) {
+        //     if (low < high) {
+        //         // pi is partitioning index, arr[p]
+        //         // is now at right place
+        //         const pi = partition(arr, low, high);
+        //         // Separately sort elements before
+        //         // partition and after partition
+        //         quickSort(arr, low, pi - 1);
+        //         quickSort(arr, pi + 1, high);
+        //     }
+        // }
+        // // Driver Code
+        // const arr = [10, 7, 8, 9, 1, 5];
+        // const n = arr.length;
+        // quickSort(arr, 0, n - 1);
+        // console.log(arr);
+
+
+
+
+
+
+        //////////////////////////////////// Counting Sort
+
+        // function countingSort(arr) {
+        //     let count = [];
+        //     let k = Math.max(...arr) + 1;
+        //     for (let i = 0; i < k; i++) {
+        //         count[i] = 0;
+        //     }
+        //     for (let i = 0; i < arr.length; i++) {
+        //         count[arr[i]]++;
+        //     }
+        //     for (let i = 1; i < k; i++) {
+        //         count[i] = count[i - 1] + count[i];
+        //     }
+        //     let output = [];
+        //     for (let i = 0; i < arr.length; i++) {
+        //         output[count[arr[i]] - 1]=arr[i];
+        //         count[arr[i]]--;
+        //     }
+        //     for (let i = 0; i < arr.length; i++) {
+        //         arr[i] = output[i];
+        //     }
+        // }
+
+
+        // let arr = [8, 3, 5, 1, 3, 8, 6, 4, 3];
+        // console.log("original array", arr);
+        // countingSort(arr);
+        // console.log("sorted array", arr);
+
+
+
+
+
+        //////////////////////////////////// RADIX SORT
+
+
+        // function countSort(arr, n, exp) {
+        //     const output = new Array(n);
+        //     let i;
+        //     const count = new Array(n);
+        //     for (let i = 0; i < 10; i++) {
+        //         count[i] = 0;
+        //     }
+        //     for (i = 0; i < n; i++) {
+        //         count[Math.floor(arr[i] / exp) % 10]++;
+        //     }
+        //     for (i = 1; i < 10; i++) {
+        //         count[i] += count[i - 1]
+        //     }
+        //     for (i = n - 1; i >= 0; i--) {
+        //         output[count[Math.floor(arr[i] / exp) % 10] - 1] = arr[i];
+        //         count[Math.floor(arr[i] / exp) % 10]--;
+        //     }
+        //     for (i = 0; i < n; i++)
+        //         arr[i] = output[i];
+        // }
+
+
+
+
+        // function radixSort(arr,n){
+        //     const m=Math.max(...arr);
+        //     for(let exp=1;Math.floor(m/exp)>0;exp*=10){
+        //         countSort(arr,n,exp);
+        //     }
+        // }
+
+
+        // let arr = [170,45,75,90,802,24,2,66];
+        // const n=arr.length;
+        // console.log("original array", arr);
+        // radixSort(arr,arr.length);
+        // console.log("sorted array", arr);
+
+
+
+
+
+
+        //////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack and Queue</title>
+</head>
+<body>
+    <script>
+
+
+        ////////////////////////////////       DSA            ////////////////////////////////////////////////
+        //////////////////  Neeraj Sharma class code
+        //////////////////  STACK
+
+        // class Stack {
+        //     constructor(capacity) {
+        //         this.capacity = capacity;
+        //         this.top = -1;
+        //         this.arr = [];
+        //     }
+
+        //     isFull() {
+        //         return this.top == this.capacity;
+        //     }
+
+        //     isEmpty() {
+        //         return this.top == -1;
+        //     }
+
+        //     push(item) {
+        //         if (this.isFull()) {
+        //             console.log("stack overflow");
+        //             return;
+        //         }
+        //         this.top++;
+        //         this.arr[this.top] = item;
+        //     }
+
+        //     pop() {
+        //         if (this.isEmpty()) {
+        //             console.log("stack underflow");
+        //             return;
+        //         }
+        //         let result = this.arr[this.top];
+        //         this.top--;
+        //         return result;
+        //     }
+
+        //     peek() {
+        //         if (this.isEmpty()) {
+        //             console.log("stack underflow");
+        //             return;
+        //         }
+        //         return this.arr[this.top];
+        //     }
+
+        //     size() {
+        //         return this.top + 1;
+        //     }
+
+        // }
+
+
+        // let myStack = new Stack(5);
+        // myStack.push(1);
+        // console.log("array " + myStack.arr);
+        // console.log("peek " + myStack.peek());
+        // console.log("size " + myStack.size());
+        // console.log("array " + myStack.arr);
+
+
+        // myStack.push(2);
+
+        // console.log("peek " + myStack.peek());
+        // console.log("size " + myStack.size());
+        // console.log("array " + myStack.arr);
+
+        // myStack.push(3);
+        // console.log("peek " + myStack.peek());
+        // console.log("size " + myStack.size());
+        // console.log("array " + myStack.arr);
+
+        // myStack.push(4);
+        // console.log("array " + myStack.arr);
+        // myStack.push(5);
+        // console.log("array " + myStack.arr);
+        // myStack.push(6);
+        // console.log("array " + myStack.arr);
+
+        // myStack.pop();
+        // console.log("array " + myStack.arr);
+        // myStack.pop();
+        // console.log("array " + myStack.arr);
+
+
+
+
+
+        //////////////////  Neeraj Sharma class code
+        //////////////////  Queue
+
+        // class Queue{
+        //     constructor(capacity){
+        //         this.capacity=capacity;
+        //         this.front=0;
+        //         this.size=0;
+        //         this.arr=[];
+        //     }
+
+        //     isFull(){
+        //         return this.size==this.capacity;
+        //     }
+
+        //     isEmpty(){
+        //         return this==0;
+        //     }
+
+        //     enqueue(item){
+        //         if(this.isFull()){
+        //             console.log("Queue is full");
+        //             return;
+        //         }
+        //         let rear=(this.front+this.size-1)%this.capacity;
+        //         rear=(rear+1)%this.capacity;
+        //         this.arr[rear]=item;
+        //         this.size=this.size+1;
+        //         console.log(item+" is enqueued");
+        //     }
+
+        //     dequeue(){
+        //         if(this.isEmpty()){
+        //             console.log('Queue is empty');
+        //             return;
+        //         }
+        //         let result=this.arr[this.front];
+        //         this.front=(this.front+1)%this.capacity;
+        //         this.size=this.size-1;
+        //         console.log('dequeue :'+result);
+        //         return result;
+        //     }
+
+        //     peek(){
+        //         if(this.isEmpty()){
+        //             console.log("queue is empty");
+        //             return;
+        //         }
+        //         return this.arr[this.front];
+        //     }
+        // }
+
+        // let myqueue=new Queue(5);
+
+        // myqueue.enqueue(1);
+        // myqueue.enqueue(2);
+        // myqueue.enqueue(3);
+        // myqueue.enqueue(4);
+        // myqueue.enqueue(5);
+        // myqueue.enqueue(6);
+        // console.log(myqueue.arr);
+
+        // console.log("Queue size is "+myqueue.size);
+        // myqueue.dequeue();
+        // console.log("Queue size and current arr is "+myqueue.size,myqueue.arr);
+        // //console.log(myqueue.arr);
+        // myqueue.enqueue(6);
+        // console.log("Queue size and current arr is "+myqueue.size,myqueue.arr);
+        // myqueue.dequeue();
+        // console.log("Queue size and current arr is "+myqueue.size,myqueue.arr);
+        // myqueue.dequeue();
+        // console.log("Queue size and current arr is "+myqueue.size,myqueue.arr);
+
+
+
+
+
+        //////////////////  Neeraj Sharma class code
+        //////////////////  sorting
+
+        // console.log((483 / 10) % 10)
+
+        // 1234 % 10; // 4
+        // once=Math.floor((1234 / 1) % 10); // 4
+        // ten=Math.floor((1234 / 10) % 10); // 3
+        // hun=Math.floor((1234 / 100) % 10); // 2
+
+        // console.log(once,ten,hun)
+
+
+
+
+
+    </script>
+
+    
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursion</title>
+</head>
+
+<body>
+    <script>
+        // function countDown(num){
+        //     console.log(num);
+        //     const newNum=num-1;
+        //     // base condition for stopping infinite recursion using if-else
+        //     if(num>0) {
+        //         countDown(newNum);
+        //     }
+        // }
+        // //console.log(countDown(5));
+        // countDown(5);
+
+        // function factorial(x){
+        //     if(x===0){
+        //         return 1;
+        //     }
+        //     else{
+        //         return x*factorial(x-1);
+        //     }
+        // }
+
+        // num=5
+        // console.log(factorial(num));
+        // console.log(factorial(17));
+
+        // function sum(n){
+        //     if(n<=1){
+        //         return n;
+        //     }
+        //     return n+sum(n-1);
+        // }
+
+        // console.log(sum(4))
+
+
+        // function fibo(num){
+        //     if(num<2){
+        //         return num;
+        //     }
+        //     else{
+        //         return fibo(num-1)+fibo(num-2);
+        //     }
+
+        // }
+
+
+
+        // function fiboSeries(n,fibo){
+        //     let arr=[];
+        //     let str='';
+        //     for(i=0;i<n;i++){
+        //     //console.log(fibo(i));
+        //     arr.push(fibo(i));
+        //     str=str+' ' + (fibo(i)).toFixed(0);
+
+        //     }
+        // return [arr,str];
+        // }
+
+        // let [arr,str]=fiboSeries(8,fibo);
+        // console.log(arr,str);
+        // console.log(fiboSeries(8,fibo));
+
+
+        // function growBeanStalk(years){
+        //     if(years<=0){
+        //         return 0;
+        //     }
+        //     else if (years<=2){
+        //         console.log(1);
+        //         return 1;
+        //     }
+        //     console.log("recursion of"+years+":");
+        //     //console.log(years-1);
+        //     console.log(years-2);
+        //     return (growBeanStalk(years-1))+(growBeanStalk(years-2));
+
+        // }
+
+        // growBeanStalk(5)
+
+
+        
+
+
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        ///////////////  STACK
+
+
+
+
+        // class Stack{
+        //     constructor(){
+        //         this.items=[];
+        //     }
+        //     add(element){
+        //         return this.items.push(element)
+        //     }
+        //     remove(){
+        //         if(this.items.length>0){
+        //             return this.items.pop();
+        //         }
+        //     }
+        //     peek(){
+        //         return this.items[this.items.length-1];
+        //     }
+        //     isEmpty(){
+        //         return this.items.length==0;
+        //     }
+        //     size(){
+        //         return this.items.length;
+        //     }
+        //     clear(){
+        //         this.items=[];
+        //     }
+        // }
+
+        // let stack = new Stack();
+
+        // stack.add(1);
+        // stack.add(2);
+        // stack.add(4);
+        // stack.add(8);
+        // console.log(stack.items);
+        // stack.remove();
+
+        // console.log(stack.items);
+        // console.log(stack.peek());
+        // console.log(stack.isEmpty());
+        // console.log(stack.size());
+        // stack.clear();
+
+
+
+
+        ///////////////     QUEUE  (not running)
+
+
+        // class Node {
+        //     constructor(value) {
+        //         this.value;
+        //         this.next = null;
+        //     }
+        // }
+
+        // class Queue {
+        //     constructor() {
+        //         this.head = null;
+        //         this.tail = null;
+        //         this.length = 0;
+        //     }
+
+        //     enqueue(value) {
+        //         const node = new Node(value);
+        //         if (this.head) {
+        //             this.tail.next = node;
+        //             this.tail = node;
+        //         }
+        //         else {
+        //             this.head = node;
+        //             this.tail = node;
+        //         }
+        //         this.length++
+        //     }
+
+        //     dequeue() {
+        //         const current = this.head;
+        //         this.head = this.head.next;
+        //         this.length--;
+        //         return current.value;
+        //     }
+
+        //     print() {
+        //         let current = this.head;
+        //         while (current) {
+        //             console.log(current.value);
+        //             current = current.next;
+        //         }
+        //     }
+
+        //     isEmpty() {
+        //         return this.length === 0;
+        //     }
+
+        //     getHead() {
+        //         return this.head.value;
+        //     }
+
+        //     getLength() {
+        //         return this.length;
+        //     }
+        // }
+
+
+
+
+
+        // let queue = new Queue();
+        // console.log(queue.getLength())
+
+
+
+
+        // queue.enqueue(1);
+        // queue.enqueue(2);
+        // queue.enqueue(4);
+        // queue.enqueue(5);
+        // console.log(queue.print());
+
+    </script>
+</body>
+</html> -->

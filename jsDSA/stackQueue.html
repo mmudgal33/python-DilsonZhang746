@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack and Queue</title>
+</head>
+<body>
+    <script>
+
+
+        ////////////////////////////////       DSA            ////////////////////////////////////////////////
+        //////////////////  Neeraj Sharma class code
+        //////////////////  STACK
+
+        // class Stack {
+        //     constructor(capacity) {
+        //         this.capacity = capacity;
+        //         this.top = -1;
+        //         this.arr = [];
+        //     }
+
+        //     isFull() {
+        //         return this.top == this.capacity;
+        //     }
+
+        //     isEmpty() {
+        //         return this.top == -1;
+        //     }
+
+        //     push(item) {
+        //         if (this.isFull()) {
+        //             console.log("stack overflow");
+        //             return;
+        //         }
+        //         this.top++;
+        //         this.arr[this.top] = item;
+        //     }
+
+        //     pop() {
+        //         if (this.isEmpty()) {
+        //             console.log("stack underflow");
+        //             return;
+        //         }
+        //         let result = this.arr[this.top];
+        //         this.top--;
+        //         return result;
+        //     }
+
+        //     peek() {
+        //         if (this.isEmpty()) {
+        //             console.log("stack underflow");
+        //             return;
+        //         }
+        //         return this.arr[this.top];
+        //     }
+
+        //     size() {
+        //         return this.top + 1;
+        //     }
+
+        // }
+
+
+        // let myStack = new Stack(5);
+        // myStack.push(1);
+        // console.log("array " + myStack.arr);
+        // console.log("peek " + myStack.peek());
+        // console.log("size " + myStack.size());
+        // console.log("array " + myStack.arr);
+
+
+        // myStack.push(2);
+
+        // console.log("peek " + myStack.peek());
+        // console.log("size " + myStack.size());
+        // console.log("array " + myStack.arr);
+
+        // myStack.push(3);
+        // console.log("peek " + myStack.peek());
+        // console.log("size " + myStack.size());
+        // console.log("array " + myStack.arr);
+
+        // myStack.push(4);
+        // console.log("array " + myStack.arr);
+        // myStack.push(5);
+        // console.log("array " + myStack.arr);
+        // myStack.push(6);
+        // console.log("array " + myStack.arr);
+
+        // myStack.pop();
+        // console.log("array " + myStack.arr);
+        // myStack.pop();
+        // console.log("array " + myStack.arr);
+
+
+
+
+
+        //////////////////  Neeraj Sharma class code
+        //////////////////  Queue
+
+        // class Queue{
+        //     constructor(capacity){
+        //         this.capacity=capacity;
+        //         this.front=0;
+        //         this.size=0;
+        //         this.arr=[];
+        //     }
+
+        //     isFull(){
+        //         return this.size==this.capacity;
+        //     }
+
+        //     isEmpty(){
+        //         return this==0;
+        //     }
+
+        //     enqueue(item){
+        //         if(this.isFull()){
+        //             console.log("Queue is full");
+        //             return;
+        //         }
+        //         let rear=(this.front+this.size-1)%this.capacity;
+        //         rear=(rear+1)%this.capacity;
+        //         this.arr[rear]=item;
+        //         this.size=this.size+1;
+        //         console.log(item+" is enqueued");
+        //     }
+
+        //     dequeue(){
+        //         if(this.isEmpty()){
+        //             console.log('Queue is empty');
+        //             return;
+        //         }
+        //         let result=this.arr[this.front];
+        //         this.front=(this.front+1)%this.capacity;
+        //         this.size=this.size-1;
+        //         console.log('dequeue :'+result);
+        //         return result;
+        //     }
+
+        //     peek(){
+        //         if(this.isEmpty()){
+        //             console.log("queue is empty");
+        //             return;
+        //         }
+        //         return this.arr[this.front];
+        //     }
+        // }
+
+        // let myqueue=new Queue(5);
+
+        // myqueue.enqueue(1);
+        // myqueue.enqueue(2);
+        // myqueue.enqueue(3);
+        // myqueue.enqueue(4);
+        // myqueue.enqueue(5);
+        // myqueue.enqueue(6);
+        // console.log(myqueue.arr);
+
+        // console.log("Queue size is "+myqueue.size);
+        // myqueue.dequeue();
+        // console.log("Queue size and current arr is "+myqueue.size,myqueue.arr);
+        // //console.log(myqueue.arr);
+        // myqueue.enqueue(6);
+        // console.log("Queue size and current arr is "+myqueue.size,myqueue.arr);
+        // myqueue.dequeue();
+        // console.log("Queue size and current arr is "+myqueue.size,myqueue.arr);
+        // myqueue.dequeue();
+        // console.log("Queue size and current arr is "+myqueue.size,myqueue.arr);
+
+
+
+
+
+        //////////////////  Neeraj Sharma class code
+        //////////////////  sorting
+
+        // console.log((483 / 10) % 10)
+
+        // 1234 % 10; // 4
+        // once=Math.floor((1234 / 1) % 10); // 4
+        // ten=Math.floor((1234 / 10) % 10); // 3
+        // hun=Math.floor((1234 / 100) % 10); // 2
+
+        // console.log(once,ten,hun)
+
+
+
+
+
+    </script>
+
+    
+</body>
+</html>

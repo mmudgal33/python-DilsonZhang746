@@ -1,0 +1,642 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>doubly linked list M2</title>
+</head>
+
+<body>
+    <script>
+
+        
+
+        
+
+        // let Node = function (element) {
+        //     this.element = element;
+        //     this.next = null;
+        //     this.prev = null;
+        // }
+
+
+
+        // function doubleLinkedList() {
+        let doubleLinkedList = function (element) {
+            let Node = function (element) {
+                this.element = element;
+                this.next = null;
+                this.prev = null;
+            }
+            let length = 0;
+            let head = null;
+            let tail = null;
+            //Add new element
+            this.append = function (element) {
+                let node = new Node(element),
+                    current = head,
+                    previous;
+                if (!head) {
+                    head = node;
+                    tail = node;
+                } else {
+                    node.prev = tail;
+                    tail.next = node;
+                    tail = node;
+                }
+                length++;
+            }
+            //Add element
+            this.insert = function (position, element) {
+                //Check of out-of-bound values
+                if (position >= 0 && position <= length) {
+                    let node = new Node(element),
+                        current = head,
+                        previous,
+                        index = 0;
+                    if (position === 0) {
+                        if (!head) {
+                            head = node;
+                            tail = node;
+                        } else {
+                            node.next = current;
+                            current.prev = node;
+                            head = node;
+                        }
+                    } else if (position === length) {
+                        current = tail;
+                        current.next = node;
+                        node.prev = current;
+                        tail = node;
+                    } else {
+                        while (index++ < position) {
+                            previous = current;
+                            current = current.next;
+                        }
+                        node.next = current;
+                        previous.next = node;
+                        //New
+                        current.prev = node;
+                        node.prev = previous;
+                    }
+                    length++;
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            //Remove element at any position
+            this.removeAt = function (position) {
+                //look for out-of-bounds value
+                if (position > -1 && position < length) {
+                    let current = head, previous, index = 0;
+                    //Removing first item
+                    if (position === 0) {
+                        head = current.next;
+                        //if there is only one item, update tail //NEW
+                        if (length === 1) {
+                            tail = null;
+                        } else {
+                            head.prev = null;
+                        }
+                    } else if (position === length - 1) {
+                        current = tail;
+                        tail = current.prev;
+                        tail.next = null;
+                    } else {
+                        while (index++ < position) {
+                            previous = current;
+                            current = current.next;
+                        }
+                        //link previous with current's next - skip it
+                        previous.next = current.next;
+                        current.next.prev = previous;
+                    }
+                    length--;
+                    return current.element;
+                } else {
+                    return null;
+                }
+            }
+            //Get the indexOf item
+            this.indexOf = function (elm) {
+                let current = head,
+                    index = -1;
+                //If element found then return its position
+                while (current) {
+                    if (elm === current.element) {
+                        return ++index;
+                    }
+                    index++;
+                    current = current.next;
+                }
+                //Else return -1
+                return -1;
+            };
+            //Find the item in the list
+            this.isPresent = (elm) => {
+                return this.indexOf(elm) !== -1;
+            };
+            //Delete an item from the list
+            this.delete = (elm) => {
+                return this.removeAt(this.indexOf(elm));
+            };
+            //Delete first item from the list
+            this.deleteHead = function () {
+                this.removeAt(0);
+            }
+            //Delete last item from the list
+            this.deleteTail = function () {
+                this.removeAt(length - 1);
+            }
+            //Print item of the string
+            this.toString = function () {
+                let current = head,
+                    string = '';
+                while (current) {
+                    string += current.element + (current.next ? '\n' : '');
+                    current = current.next;
+                }
+                return string;
+            };
+            //Convert list to array
+            this.toArray = function () {
+                let arr = [],
+                    current = head;
+                while (current) {
+                    arr.push(current.element);
+                    current = current.next;
+                }
+                return arr;
+            };
+            //Check if list is empty
+            this.isEmpty = function () {
+                return length === 0;
+            };
+            //Get the size of the list
+            this.size = function () {
+                return length;
+            }
+            //Get the head
+            this.getHead = function () {
+                return head;
+            }
+            //Get the tail
+            this.getTail = function () {
+                return tail;
+            }
+        }
+
+
+
+
+        DS={};
+        var list = new doubleLinkedList();
+        list.append(2);
+        list.append(3);
+        list.append(4);
+        list.append(5);
+        list.append(6);
+        list.append(7);
+        list.append(8);
+        list.append(9);
+        list.append(10);
+        list.append(11);
+        list.append(12);
+        
+        
+        console.log(list.size(),list.toArray());
+        
+        //console.log(list.isEmpty());
+        console.log(list.getHead());
+        console.log(list.size(),list.toArray());
+        console.log(list.getTail());
+        console.log(list.size(),list.toArray());
+        console.log(list.toString());
+        console.log(list.size(),list.toArray());
+        console.log(list.deleteTail());
+        console.log(list.size(),list.toArray());
+        console.log(list.deleteHead());
+        console.log(list.size(),list.toArray());
+        console.log(list.isPresent(4));
+        console.log(list.size(),list.toArray());
+        console.log(list.delete(9));
+        console.log(list.size(),list.toArray());
+        console.log(list.indexOf(4));
+        console.log(list.size(),list.toArray());
+        console.log(list.removeAt(2));
+        console.log(list.size(),list.toArray());
+        console.log(list.insert(3,6));
+        console.log(list.size(),list.toArray());
+
+
+        
+
+
+
+
+
+
+
+
+        
+
+
+
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>doubly linked list method function object based M3</title>
+</head>
+
+<body>
+    <script>
+        /**
+ * Javascript implementation of Doubly Linked list
+ * 
+ * Dinesh
+ *
+ * (More to come) (Add more error handling scenarios)
+ */
+
+        // Global object (namespace)
+        DS = {};
+
+        /**
+         * DList Nodes
+         * 
+         */
+        DS.DListNode = function () {
+            this.item = null;
+            this.next = null;
+            this.prev = null;
+        }
+
+        /**
+         * DLinkedList object
+         */
+        DS.DLinkedList = function () {
+            this.head = null;
+            this.tail = null;
+            var size = 0;
+
+            //Insert Nodes
+            this.insertNode = function (item) {
+                var node = new DS.DListNode();
+                node.item = item;
+                if (this.head == null) {
+                    this.head = node;
+                    this.tail = node;
+                    this.tail.next = null;
+                    this.tail.prev = null;
+                    size += 1;
+                } else {
+                    var prev = this.tail;
+                    this.tail.next = node;
+                    this.tail = node;
+                    this.tail.prev = prev;
+                    size += 1;
+                }
+            }
+
+            //Insert node in the first location
+            this.insertFirst = function (item) {
+                var node = new DS.DListNode();
+                node.item = item;
+                node.next = this.head;
+                this.head.prev = node;
+                this.head = node;
+                size += 1;
+            }
+
+            // Delete First node
+            this.deleteFirstNode = function () {
+                if (this.head != null) {
+                    this.head = this.head.next;
+                    this.head.prev = null;
+                    size -= 1;
+                } else {
+                    console.log("Linked list is empty");
+                }
+            }
+
+            // Print Nodes
+            this.printNodes = function () {
+                if (size < 1) console.log("No node present in the Doubly Linked List");
+
+                var current = this.head;
+                for (var i = 0; i < size; i++) {
+                    if (current.prev == null)
+                        console.log("Node " + current.item + " is at location " + i + " : Previous Node: null : Next Node: " + current.next.item);
+                    else if (current.next == null)
+                        console.log("Node " + current.item + " is at location " + i + " : Previous Node: " + current.prev.item + " : Next Node: null");
+                    else console.log("Node " + current.item + " is at location " + i + " : Previous Node: " + current.prev.item + " : Next Node: " + current.next.item);
+                    current = current.next;
+                }
+            }
+
+            // Get node Size
+            this.getSize = function () {
+                return size;
+            }
+        }
+
+        var list = new DS.DLinkedList();
+        list.insertNode("test1");
+        list.insertNode("test2");
+        list.insertNode("test3");
+        list.insertNode("test4");
+        list.insertNode("test5");
+        list.insertNode("test6");
+        list.printNodes();
+
+        console.log("Adding item in the start");
+        list.insertFirst("test1st");
+        list.printNodes();
+
+        console.log("Deleting first node");
+        list.deleteFirstNode();
+        list.printNodes();
+    </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>doubly linked list M1</title>
+</head>
+
+<body>
+    <script>
+        function createNode(value) {
+            return {
+                value: value,
+                next: null,
+                previous: null,
+            };
+        }
+
+
+        class DoublyLinkedList {
+            constructor() {
+                this.head = null;
+                this.tail = null;
+                this.length = 0;
+            }
+
+
+
+
+            // insert at end
+            insert(value) {
+                this.length++;
+                let newNode = createNode(value);
+                if (this.tail) {
+                    // list is not empty
+                    this.tail.next = newNode;
+                    newNode.previous = this.tail;
+                    this.tail = newNode;
+                    return newNode;
+                }
+                this.head = this.tail = newNode;
+                return newNode;
+            }
+
+
+
+            // remove from end
+            remove() {
+                if (this.tail) {
+                    this.length--;
+                    const removedTail = this.tail;
+                    this.tail = this.tail.previous;
+                    if (this.tail) {
+                        this.tail.next = null;
+                    } else {
+                        this.head = null;
+                    }
+                    return removedTail;
+                }
+                return undefined;
+            }
+
+
+
+            printList() {
+                //Creates an empty array.
+                
+                let printArrayList = [];
+                let dLinkedList = [];
+
+                //Pointer which points to the head node
+                let currentNode = this.head;
+                //Start iterating from the first node till you reach the last node
+                while (currentNode !== null) {
+                    //Add every node's value to the array
+                    dLinkedList.push(currentNode.value);
+                    printArrayList.push([currentNode.previous?.value,currentNode.value,currentNode.next?.value]);
+                    //Point pointer to the next node
+                    currentNode = currentNode.next;
+                }
+                //Return the array
+                return [printArrayList.join(' -> '),dLinkedList.join(' -> ')];
+            }
+
+
+
+            print() {
+                let current = this.head;
+                while (current) {
+                    console.log(
+                        `${current.previous?.value} ${current.value} ${current.next?.value}`
+                    );
+                    current = current.next;
+                }
+            }
+
+
+
+
+
+            
+
+
+
+
+            insertHead(value) {
+                this.length++;
+                let newNode = createNode(value);
+                if (this.head) {
+                    this.head.previous = newNode;
+                    newNode.next = this.head;
+                    this.head = newNode;
+                    return newNode;
+                }
+                this.head = this.tail = newNode;
+                return newNode;
+            }
+
+
+
+            removeHead() {
+                if (this.head) {
+                    this.length--;
+                    const removedHead = this.head;
+                    this.head = this.head.next;
+                    if (this.head) {
+                        this.head.previous = null;
+                    } else {
+                        this.tail = null;
+                    }
+                    return removedHead;
+                }
+                return undefined;
+            }
+
+
+            insertIndex(value, index) {
+                if (index >= this.length) {
+                    throw new Error("Insert index out of bounds");
+                }
+                if (index === 0) {
+                    return this.insertHead(value);
+                }
+                this.length++;
+                let currentNode = this.head;
+                for (let i = 0; i < index; i++) {
+                    currentNode = currentNode.next;
+                }
+                const previousNode = currentNode.previous;
+                const newNode = createNode(value);
+                newNode.next = currentNode;
+                newNode.previous = previousNode;
+                previousNode.next = newNode;
+                currentNode.previous = newNode;
+                return newNode;
+            }
+
+
+            // remove at specific index
+            removeIndex(index) {
+                if (index >= this.length) {
+                    throw new Error("Remove index out of bounds");
+                }
+                if (index === 0) {
+                    return this.removeHead();
+                }
+                this.length--;
+                let currentNode = this.head;
+                for (let i = 0; i < index; i++) {
+                    currentNode = currentNode.next;
+                }
+                const previousNode = currentNode.previous;
+                const nextNode = currentNode.next;
+                previousNode.next = nextNode;
+                nextNode.previous = previousNode;
+                return currentNode;
+            }
+
+
+        }
+
+
+
+
+
+
+
+        const dLinkedList = new DoublyLinkedList();
+        dLinkedList.insert(7);
+        //console.log(dLinkedList.print());
+
+        dLinkedList.insert(8);
+        //console.log(dLinkedList.print());
+
+        dLinkedList.insert(9);
+        //dLinkedList.print();
+        console.log(dLinkedList.printList());
+
+        dLinkedList.remove();
+        //dLinkedList.print();
+        console.log(dLinkedList.printList());
+
+        dLinkedList.insertHead(6);
+        console.log(dLinkedList.printList());
+
+        dLinkedList.removeHead();
+        console.log(dLinkedList.printList());
+
+        dLinkedList.insertIndex(6,0);
+        console.log(dLinkedList.printList());
+
+        dLinkedList.removeIndex(1);
+        console.log(dLinkedList.printList());
+
+
+        
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
