@@ -1,14 +1,3 @@
-EasyDataScience python basics DataAnalysis
-https://youtu.be/PfxyZ3BbuDs
-EasyDataScience statistics using python
-https://youtu.be/80pa5V-_KLw?list=PL2RMzk1VZLjbaVJzIg-o3UFKzxuyjNYRz
-EasyDataScience classes in python
-https://youtu.be/eWK4MH03ve0?list=PL2RMzk1VZLjbaVJzIg-o3UFKzxuyjNYRz
-campusX sql
-https://youtu.be/nopIGY1zJE0?list=PLKnIA16_RmvYun1_5r9Fb4eQigioPB7yn
-
-
-
 1	Two Sum	python3
 2	Add Two Numbers	python3
 3	Longest Substring Without Repeating Characters	python3
