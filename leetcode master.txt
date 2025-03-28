@@ -1,0 +1,1171 @@
+EasyDataScience python basics DataAnalysis
+https://youtu.be/PfxyZ3BbuDs
+EasyDataScience statistics using python
+https://youtu.be/80pa5V-_KLw?list=PL2RMzk1VZLjbaVJzIg-o3UFKzxuyjNYRz
+EasyDataScience classes in python
+https://youtu.be/eWK4MH03ve0?list=PL2RMzk1VZLjbaVJzIg-o3UFKzxuyjNYRz
+campusX sql
+https://youtu.be/nopIGY1zJE0?list=PLKnIA16_RmvYun1_5r9Fb4eQigioPB7yn
+
+
+
+1	Two Sum	python3
+2	Add Two Numbers	python3
+3	Longest Substring Without Repeating Characters	python3
+4	Median of Two Sorted Arrays	python3
+5	Longest Palindromic Substring	python3
+6	ZigZag Conversion	python3
+7	Reverse Integer	python3
+8	String to Integer (atoi)	python3
+9	Palindrome Number	python3
+10	Regular Expression Matching	python3
+11	Container With Most Water	python3
+12	Integer to Roman	python3
+13	Roman to Integer	python3
+14	Longest Common Prefix	python3
+15	3Sum	python3
+16	3Sum Closest	python3
+17	Letter Combinations of a Phone Number	python3
+18	4Sum	python3
+19	Remove Nth Node From End of List	python3
+20	Valid Parentheses	python3
+21	Merge Two Sorted Lists	python3
+22	Generate Parentheses	python3
+23	Merge k Sorted Lists	python3
+24	Swap Nodes in Pairs	python3
+25	Reverse Nodes in k-Group	python3
+26	Remove Duplicates from Sorted Array	python3
+27	Remove Element	python3
+28	Implement strStr()	python3
+29	Divide Two Integers	python3
+30	Substring with Concatenation of All Words	python3
+31	Next Permutation	python3
+32	Longest Valid Parentheses	python3
+33	Search in Rotated Sorted Array	python3
+34	Find First and Last Position of Element in Sorted Array	python3
+35	Search Insert Position	python3
+36	Valid Sudoku	python3
+37	Sudoku Solver	python3
+38	Count and Say	python3
+39	Combination Sum	python3
+40	Combination Sum II	python3
+41	First Missing Positive	python3
+42	Trapping Rain Water	python3
+43	Multiply Strings	python3
+44	Wildcard Matching	python3
+45	Jump Game II	python3
+46	Permutations	python3
+47	Permutations II	python3
+48	Rotate Image	python3
+49	Group Anagrams	python3
+50	Pow(x, n)	python3
+51	N-Queens	python3
+52	N-Queens II	python3
+53	Maximum Subarray	python3
+54	Spiral Matrix	python3
+55	Jump Game	python3
+56	Merge Intervals	python3
+57	Insert Interval	python3
+58	Length of Last Word	python3
+59	Spiral Matrix II	python3
+60	Permutation Sequence	python3
+61	Rotate List	python3
+62	Unique Paths	python3
+63	Unique Paths II	python3
+64	Minimum Path Sum	python3
+65	Valid Number	python3
+66	Plus One	python3
+67	Add Binary	python3
+68	Text Justification	python3
+69	Sqrt(x)	python3
+70	Climbing Stairs	python3
+71	Simplify Path	python3
+72	Edit Distance	python3
+73	Set Matrix Zeroes	python3
+74	Search a 2D Matrix	python3
+75	Sort Colors	python3
+76	Minimum Window Substring	python3
+77	Combinations	python3
+78	Subsets	python3
+79	Word Search	python3
+80	Remove Duplicates from Sorted Array II	python3
+81	Search in Rotated Sorted Array II	python3
+82	Remove Duplicates from Sorted List II	python3
+83	Remove Duplicates from Sorted List	python3
+84	Largest Rectangle in Histogram	python3
+85	Maximal Rectangle	python3
+86	Partition List	python3
+87	Scramble String	python3
+88	Merge Sorted Array	python3
+89	Gray Code	python3
+90	Subsets II	python3
+91	Decode Ways	python3
+92	Reverse Linked List II	python3
+93	Restore IP Addresses	python3
+94	Binary Tree Inorder Traversal	python3
+95	Unique Binary Search Trees II	python3
+96	Unique Binary Search Trees	python3
+97	Interleaving String	python3
+98	Validate Binary Search Tree	python3
+99	Recover Binary Search Tree	python3
+100	Same Tree	python3
+101	Symmetric Tree	python3
+102	Binary Tree Level Order Traversal	python3
+103	Binary Tree Zigzag Level Order Traversal	python3
+104	Maximum Depth of Binary Tree	python3
+105	Construct Binary Tree from Preorder and Inorder Traversal	python3
+106	Construct Binary Tree from Inorder and Postorder Traversal	python3
+107	Binary Tree Level Order Traversal II	python3
+108	Convert Sorted Array to Binary Search Tree	python3
+109	Convert Sorted List to Binary Search Tree	python3
+110	Balanced Binary Tree	python3
+111	Minimum Depth of Binary Tree	python3
+112	Path Sum	python3
+113	Path Sum II	python3
+114	Flatten Binary Tree to Linked List	python3
+115	Distinct Subsequences	python3
+116	Populating Next Right Pointers in Each Node	python3
+117	Populating Next Right Pointers in Each Node II	python3
+118	Pascal's Triangle	python3
+119	Pascal's Triangle II	python3
+120	Triangle	python3
+121	Best Time to Buy and Sell Stock	python3
+122	Best Time to Buy and Sell Stock II	python3
+123	Best Time to Buy and Sell Stock III	python3
+124	Binary Tree Maximum Path Sum	python3
+125	Valid Palindrome	python3
+126	Word Ladder II	python3
+127	Word Ladder	python3
+128	Longest Consecutive Sequence	python3
+129	Sum Root to Leaf Numbers	python3
+130	Surrounded Regions	python3
+131	Palindrome Partitioning	python3
+132	Palindrome Partitioning II	python3
+133	Clone Graph	python3
+134	Gas Station	python3
+135	Candy	python3
+136	Single Number	python3
+137	Single Number II	python3
+138	Copy List with Random Pointer	python3
+139	Word Break	python3
+140	Word Break II	python3
+141	Linked List Cycle	python3
+142	Linked List Cycle II	python3
+143	Reorder List	python3
+144	Binary Tree Preorder Traversal	python3
+145	Binary Tree Postorder Traversal	python3
+146	LRU Cache	python3
+147	Insertion Sort List	python3
+148	Sort List	python3
+149	Max Points on a Line	python3
+150	Evaluate Reverse Polish Notation	python3
+151	Reverse Words in a String	python3
+152	Maximum Product Subarray	python3
+153	Find Minimum in Rotated Sorted Array	python3
+154	Find Minimum in Rotated Sorted Array II	python3
+155	Min Stack	python3
+156	Binary Tree Upside Down	python3
+157	Read N Characters Given Read4	python3
+158	Read N Characters Given Read4 II - Call multiple times	python3
+159	Longest Substring with At Most Two Distinct Characters	python3
+160	Intersection of Two Linked Lists	python
+161	One Edit Distance	python3
+162	Find Peak Element	python3
+163	Missing Ranges	python3
+164	Maximum Gap	python3
+165	Compare Version Numbers	python3
+166	Fraction to Recurring Decimal	python3
+167	Two Sum II - Input array is sorted	python3
+168	Excel Sheet Column Title	python3
+169	Majority Element	python3
+170	Two Sum III - Data structure design	python3
+171	Excel Sheet Column Number	python3
+172	Factorial Trailing Zeroes	python3
+173	Binary Search Tree Iterator	python3
+174	Dungeon Game	python3
+179	Largest Number	python3
+186	Reverse Words in a String II	python3
+187	Repeated DNA Sequences	python3
+188	Best Time to Buy and Sell Stock IV	python3
+189	Rotate Array	python3
+190	Reverse Bits	python
+198	House Robber	python3
+199	Binary Tree Right Side View	python3
+200	Number of Islands	python3
+201	Bitwise AND of Numbers Range	python3
+202	Happy Number	python3
+203	Remove Linked List Elements	python3
+204	Count Primes	python3
+205	Isomorphic Strings	python3
+206	Reverse Linked List	python3
+207	Course Schedule	python3
+208	Implement Trie (Prefix Tree)	python3
+209	Minimum Size Subarray Sum	python3
+210	Course Schedule II	python3
+211	Add and Search Word - Data structure design	python3
+212	Word Search II	python3
+213	House Robber II	python3
+214	Shortest Palindrome	python3
+215	Kth Largest Element in an Array	python3
+216	Combination Sum III	python3
+217	Contains Duplicate	python3
+218	The Skyline Problem	python3
+219	Contains Duplicate II	python3
+220	Contains Duplicate III	python3
+221	Maximal Square	python3
+222	Count Complete Tree Nodes	python3
+223	Rectangle Area	python3
+224	Basic Calculator	python3
+225	Implement Stack using Queues	python3
+226	Invert Binary Tree	python3
+227	Basic Calculator II	python3
+228	Summary Ranges	python3
+229	Majority Element II	python3
+230	Kth Smallest Element in a BST	python3
+231	Power of Two	python3
+232	Implement Queue using Stacks	python3
+233	Number of Digit One	python3
+234	Palindrome Linked List	python3
+235	Lowest Common Ancestor of a Binary Search Tree	python3
+236	Lowest Common Ancestor of a Binary Tree	python3
+237	Delete Node in a Linked List	python3
+238	Product of Array Except Self	python3
+239	Sliding Window Maximum	python3
+240	Search a 2D Matrix II	python3
+241	Different Ways to Add Parentheses	python3
+242	Valid Anagram	python3
+243	Shortest Word Distance	python3
+244	Shortest Word Distance II	python3
+245	Shortest Word Distance III	python3
+246	Strobogrammatic Number	python3
+247	Strobogrammatic Number II	python3
+248	Strobogrammatic Number III	python3
+249	Group Shifted Strings	python3
+250	Count Univalue Subtrees	python3
+251	Flatten 2D Vector	python3
+252	Meeting Rooms	python3
+253	Meeting Rooms II	python3
+254	Factor Combinations	python3
+255	Verify Preorder Sequence in Binary Search Tree	python3
+256	Paint House	python3
+257	Binary Tree Paths	python3
+258	Add Digits	python3
+259	3Sum Smaller	python3
+260	Single Number III	python3
+261	Graph Valid Tree	python3
+263	Ugly Number	python3
+264	Ugly Number II	python3
+265	Paint House II	python3
+266	Palindrome Permutation	python3
+267	Palindrome Permutation II	python3
+268	Missing Number	python3
+269	Alien Dictionary	python3
+270	Closest Binary Search Tree Value	python3
+271	Encode and Decode Strings	python
+272	Closest Binary Search Tree Value II	python3
+273	Integer to English Words	python3
+274	H-Index	python3
+275	H-Index II	python3
+276	Paint Fence	python3
+277	Find the Celebrity	python
+278	First Bad Version	python3
+279	Perfect Squares	python3
+280	Wiggle Sort	python3
+281	Zigzag Iterator	python
+282	Expression Add Operators	python3
+283	Move Zeroes	python3
+284	Peeking Iterator	python3
+285	Inorder Successor in BST	python3
+286	Walls and Gates	python3
+287	Find the Duplicate Number	python3
+288	Unique Word Abbreviation	python3
+289	Game of Life	python3
+290	Word Pattern	python3
+291	Word Pattern II	python3
+292	Nim Game	python3
+293	Flip Game	python3
+294	Flip Game II	python3
+295	Find Median from Data Stream	python3
+296	Best Meeting Point	python3
+297	Serialize and Deserialize Binary Tree	python3
+298	Binary Tree Longest Consecutive Sequence	python3
+299	Bulls and Cows	python3
+300	Longest Increasing Subsequence	python3
+301	Remove Invalid Parentheses	python3
+302	Smallest Rectangle Enclosing Black Pixels	python3
+303	Range Sum Query - Immutable	python3
+304	Range Sum Query 2D - Immutable	python3
+305	Number of Islands II	python3
+306	Additive Number	python3
+307	Range Sum Query - Mutable	python3
+308	Range Sum Query 2D - Mutable	python3
+309	Best Time to Buy and Sell Stock with Cooldown	python3
+310	Minimum Height Trees	python3
+311	Sparse Matrix Multiplication	python3
+312	Burst Balloons	python3
+313	Super Ugly Number	python3
+314	Binary Tree Vertical Order Traversal	python3
+315	Count of Smaller Numbers After Self	python3
+316	Remove Duplicate Letters	python3
+317	Shortest Distance from All Buildings	python3
+318	Maximum Product of Word Lengths	python3
+319	Bulb Switcher	python3
+320	Generalized Abbreviation	python3
+321	Create Maximum Number	python3
+322	Coin Change	python3
+323	Number of Connected Components in an Undirected Graph	python3
+324	Wiggle Sort II	python3
+325	Maximum Size Subarray Sum Equals k	python3
+326	Power of Three	python3
+327	Count of Range Sum	python3
+328	Odd Even Linked List	python3
+329	Longest Increasing Path in a Matrix	python3
+330	Patching Array	python3
+331	Verify Preorder Serialization of a Binary Tree	python3
+332	Reconstruct Itinerary	python3
+333	Largest BST Subtree	python3
+334	Increasing Triplet Subsequence	python3
+335	Self Crossing	python3
+336	Palindrome Pairs	python3
+337	House Robber III	python3
+338	Counting Bits	python3
+339	Nested List Weight Sum	python3
+340	Longest Substring with At Most K Distinct Characters	python3
+342	Power of Four	python3
+343	Integer Break	python3
+344	Reverse String	python3
+345	Reverse Vowels of a String	python3
+346	Moving Average from Data Stream	python3
+347	Top K Frequent Elements	python3
+348	Design Tic-Tac-Toe	python3
+349	Intersection of Two Arrays	python3
+350	Intersection of Two Arrays II	python3
+351	Android Unlock Patterns	python3
+352	Data Stream as Disjoint Intervals	python3
+353	Design Snake Game	python3
+354	Russian Doll Envelopes	python3
+355	Design Twitter	python3
+356	Line Reflection	python3
+357	Count Numbers with Unique Digits	python3
+358	Rearrange String k Distance Apart	python3
+359	Logger Rate Limiter	python3
+360	Sort Transformed Array	python3
+361	Bomb Enemy	python3
+362	Design Hit Counter	python3
+363	Max Sum of Rectangle No Larger Than K	python3
+364	Nested List Weight Sum II	python3
+365	Water and Jug Problem	python3
+366	Find Leaves of Binary Tree	python3
+367	Valid Perfect Square	python3
+368	Largest Divisible Subset	python3
+369	Plus One Linked List	python3
+370	Range Addition	python3
+371	Sum of Two Integers	python3
+372	Super Pow	python3
+373	Find K Pairs with Smallest Sums	python3
+374	Guess Number Higher or Lower	python
+375	Guess Number Higher or Lower II	python3
+376	Wiggle Subsequence	python3
+377	Combination Sum IV	python3
+378	Kth Smallest Element in a Sorted Matrix	python3
+379	Design Phone Directory	python3
+380	Insert Delete GetRandom O(1)	python3
+381	Insert Delete GetRandom O(1) - Duplicates allowed	python3
+382	Linked List Random Node	python3
+383	Ransom Note	python3
+384	Shuffle an Array	python3
+385	Mini Parser	python3
+386	Lexicographical Numbers	python3
+387	First Unique Character in a String	python3
+388	Longest Absolute File Path	python3
+389	Find the Difference	python3
+390	Elimination Game	python3
+391	Perfect Rectangle	python3
+392	Is Subsequence	python3
+393	UTF-8 Validation	python3
+394	Decode String	python3
+395	Longest Substring with At Least K Repeating Characters	python3
+396	Rotate Function	python3
+397	Integer Replacement	python3
+398	Random Pick Index	python3
+399	Evaluate Division	python3
+400	Nth Digit	python
+401	Binary Watch	python3
+402	Remove K Digits	python3
+403	Frog Jump	python3
+404	Sum of Left Leaves	python3
+405	Convert a Number to Hexadecimal	python3
+406	Queue Reconstruction by Height	python3
+407	Trapping Rain Water II	python3
+408	Valid Word Abbreviation	python3
+409	Longest Palindrome	python3
+410	Split Array Largest Sum	python3
+411	Minimum Unique Word Abbreviation	python3
+412	Fizz Buzz	python3
+413	Arithmetic Slices	python3
+414	Third Maximum Number	python3
+415	Add Strings	python3
+416	Partition Equal Subset Sum	python3
+417	Pacific Atlantic Water Flow	python3
+418	Sentence Screen Fitting	python3
+419	Battleships in a Board	python3
+420	Strong Password Checker	python3
+421	Maximum XOR of Two Numbers in an Array	python3
+422	Valid Word Square	python3
+423	Reconstruct Original Digits from English	python
+424	Longest Repeating Character Replacement	python3
+425	Word Squares	python3
+426	Convert Binary Search Tree to Sorted Doubly Linked List	python3
+427	Construct Quad Tree	python3
+428	Serialize and Deserialize N-ary Tree	python
+429	N-ary Tree Level Order Traversal	python
+430	Flatten a Multilevel Doubly Linked List	python
+431	Encode N-ary Tree to Binary Tree	python
+432	All O`one Data Structure	python3
+433	Minimum Genetic Mutation	python3
+434	Number of Segments in a String	python3
+435	Non-overlapping Intervals	python3
+436	Find Right Interval	python3
+437	Path Sum III	python3
+438	Find All Anagrams in a String	python3
+439	Ternary Expression Parser	python3
+440	K-th Smallest in Lexicographical Order	python
+441	Arranging Coins	python3
+442	Find All Duplicates in an Array	python3
+443	String Compression	python3
+444	Sequence Reconstruction	python3
+445	Add Two Numbers II	python3
+446	Arithmetic Slices II - Subsequence	python3
+447	Number of Boomerangs	python
+448	Find All Numbers Disappeared in an Array	python3
+449	Serialize and Deserialize BST	python
+450	Delete Node in a BST	python3
+451	Sort Characters By Frequency	python3
+452	Minimum Number of Arrows to Burst Balloons	python3
+453	Minimum Moves to Equal Array Elements	python3
+454	4Sum II	python3
+455	Assign Cookies	python3
+456	132 Pattern	python3
+457	Circular Array Loop	python
+458	Poor Pigs	python
+459	Repeated Substring Pattern	python3
+460	LFU Cache	python3
+461	Hamming Distance	python3
+462	Minimum Moves to Equal Array Elements II	python3
+463	Island Perimeter	python3
+464	Can I Win	python3
+465	Optimal Account Balancing	python3
+466	Count The Repetitions	python3
+467	Unique Substrings in Wraparound String	python3
+468	Validate IP Address	python3
+469	Convex Polygon	python3
+470	Implement Rand10() Using Rand7()	python3
+471	Encode String with Shortest Length	python3
+472	Concatenated Words	python3
+473	Matchsticks to Square	python3
+474	Ones and Zeroes	python3
+475	Heaters	python3
+476	Number Complement	python3
+477	Total Hamming Distance	python3
+478	Generate Random Point in a Circle	python3
+479	Largest Palindrome Product	python3
+480	Sliding Window Median	python3
+481	Magical String	python3
+482	License Key Formatting	python3
+483	Smallest Good Base	python3
+484	Find Permutation	python3
+485	Max Consecutive Ones	python3
+486	Predict the Winner	python3
+487	Max Consecutive Ones II	python3
+488	Zuma Game	python3
+489	Robot Room Cleaner	python3
+490	The Maze	python3
+491	Increasing Subsequences	python3
+492	Construct the Rectangle	python3
+493	Reverse Pairs	python3
+494	Target Sum	python3
+495	Teemo Attacking	python3
+496	Next Greater Element I	python3
+497	Random Point in Non-overlapping Rectangles	python3
+498	Diagonal Traverse	python3
+499	The Maze III	python3
+500	Keyboard Row	python3
+501	Find Mode in Binary Search Tree	python3
+502	IPO	python3
+503	Next Greater Element II	python3
+504	Base 7	python3
+505	The Maze II	python3
+506	Relative Ranks	python3
+507	Perfect Number	python3
+508	Most Frequent Subtree Sum	python3
+509	Fibonacci Number	python3
+510	Inorder Successor in BST II	python3
+513	Find Bottom Left Tree Value	python3
+514	Freedom Trail	python3
+515	Find Largest Value in Each Tree Row	python3
+516	Longest Palindromic Subsequence	python3
+517	Super Washing Machines	python3
+518	Coin Change 2	python
+519	Random Flip Matrix	python3
+520	Detect Capital	python3
+521	Longest Uncommon Subsequence I	python3
+522	Longest Uncommon Subsequence II	python3
+523	Continuous Subarray Sum	python3
+524	Longest Word in Dictionary through Deleting	python3
+525	Contiguous Array	python3
+526	Beautiful Arrangement	python3
+527	Word Abbreviation	python3
+528	Random Pick with Weight	python3
+529	Minesweeper	python3
+530	Minimum Absolute Difference in BST	python3
+531	Lonely Pixel I	python3
+532	K-diff Pairs in an Array	python3
+533	Lonely Pixel II	python3
+535	Encode and Decode TinyURL	python
+536	Construct Binary Tree from String	python3
+537	Complex Number Multiplication	python3
+538	Convert BST to Greater Tree	python3
+539	Minimum Time Difference	python3
+540	Single Element in a Sorted Array	python3
+541	Reverse String II	python3
+542	01 Matrix	python3
+543	Diameter of Binary Tree	python3
+544	Output Contest Matches	python3
+545	Boundary of Binary Tree	python3
+546	Remove Boxes	python3
+547	Friend Circles	python3
+548	Split Array with Equal Sum	python
+549	Binary Tree Longest Consecutive Sequence II	python3
+551	Student Attendance Record I	python3
+552	Student Attendance Record II	python
+553	Optimal Division	python3
+554	Brick Wall	python3
+555	Split Concatenated Strings	python3
+556	Next Greater Element III	python3
+557	Reverse Words in a String III	python3
+558	Quad Tree Intersection	python3
+559	Maximum Depth of N-ary Tree	python
+560	Subarray Sum Equals K	python3
+561	Array Partition I	python3
+562	Longest Line of Consecutive One in Matrix	python3
+563	Binary Tree Tilt	python3
+564	Find the Closest Palindrome	python3
+565	Array Nesting	python3
+566	Reshape the Matrix	python3
+567	Permutation in String	python3
+568	Maximum Vacation Days	python3
+572	Subtree of Another Tree	python3
+573	Squirrel Simulation	python3
+575	Distribute Candies	python3
+576	Out of Boundary Paths	python3
+581	Shortest Unsorted Continuous Subarray	python3
+582	Kill Process	python3
+583	Delete Operation for Two Strings	python3
+587	Erect the Fence	python3
+588	Design In-Memory File System	python3
+589	N-ary Tree Preorder Traversal	python
+590	N-ary Tree Postorder Traversal	python
+591	Tag Validator	python3
+592	Fraction Addition and Subtraction	python3
+593	Valid Square	python3
+594	Longest Harmonious Subsequence	python
+598	Range Addition II	python3
+599	Minimum Index Sum of Two Lists	python3
+600	Non-negative Integers without Consecutive Ones	python3
+604	Design Compressed String Iterator	python3
+605	Can Place Flowers	python3
+606	Construct String from Binary Tree	python3
+609	Find Duplicate File in System	python3
+611	Valid Triangle Number	python3
+616	Add Bold Tag in String	python3
+617	Merge Two Binary Trees	python3
+621	Task Scheduler	python3
+622	Design Circular Queue	python3
+623	Add One Row to Tree	python3
+624	Maximum Distance in Arrays	python3
+625	Minimum Factorization	python3
+628	Maximum Product of Three Numbers	python3
+629	K Inverse Pairs Array	python3
+630	Course Schedule III	python3
+631	Design Excel Sum Formula	python3
+632	Smallest Range Covering Elements from K Lists	python3
+633	Sum of Square Numbers	python3
+634	Find the Derangement of An Array	python
+635	Design Log Storage System	python3
+636	Exclusive Time of Functions	python3
+637	Average of Levels in Binary Tree	python3
+638	Shopping Offers	python3
+639	Decode Ways II	python3
+640	Solve the Equation	python3
+641	Design Circular Deque	python3
+642	Design Search Autocomplete System	python3
+643	Maximum Average Subarray I	python3
+644	Maximum Average Subarray II	python3
+645	Set Mismatch	python3
+646	Maximum Length of Pair Chain	python3
+647	Palindromic Substrings	python3
+648	Replace Words	python3
+649	Dota2 Senate	python3
+650	2 Keys Keyboard	python3
+651	4 Keys Keyboard	python3
+652	Find Duplicate Subtrees	python3
+653	Two Sum IV - Input is a BST	python3
+654	Maximum Binary Tree	python3
+655	Print Binary Tree	python3
+656	Coin Path	python3
+657	Robot Return to Origin	python3
+658	Find K Closest Elements	python3
+659	Split Array into Consecutive Subsequences	python3
+660	Remove 9	python3
+661	Image Smoother	python3
+662	Maximum Width of Binary Tree	python3
+663	Equal Tree Partition	python3
+664	Strange Printer	python3
+665	Non-decreasing Array	python3
+666	Path Sum IV	python3
+667	Beautiful Arrangement II	python3
+668	Kth Smallest Number in Multiplication Table	python3
+669	Trim a Binary Search Tree	python3
+670	Maximum Swap	python3
+671	Second Minimum Node In a Binary Tree	python3
+672	Bulb Switcher II	python3
+673	Number of Longest Increasing Subsequence	python3
+674	Longest Continuous Increasing Subsequence	python3
+675	Cut Off Trees for Golf Event	python3
+676	Implement Magic Dictionary	python3
+677	Map Sum Pairs	python3
+678	Valid Parenthesis String	python3
+679	24 Game	python3
+680	Valid Palindrome II	python3
+681	Next Closest Time	python3
+682	Baseball Game	python3
+683	K Empty Slots	python
+684	Redundant Connection	python3
+685	Redundant Connection II	python3
+686	Repeated String Match	python3
+687	Longest Univalue Path	python
+688	Knight Probability in Chessboard	python3
+689	Maximum Sum of 3 Non-Overlapping Subarrays	python3
+690	Employee Importance	python3
+691	Stickers to Spell Word	python3
+692	Top K Frequent Words	python3
+693	Binary Number with Alternating Bits	python3
+694	Number of Distinct Islands	python3
+695	Max Area of Island	python3
+696	Count Binary Substrings	python3
+697	Degree of an Array	python3
+698	Partition to K Equal Sum Subsets	python3
+699	Falling Squares	python3
+700	Search in a Binary Search Tree	python3
+701	Insert into a Binary Search Tree	python3
+702	Search in a Sorted Array of Unknown Size	python3
+703	Kth Largest Element in a Stream	python3
+704	Binary Search	python3
+705	Design HashSet	python3
+706	Design HashMap	python3
+707	Design Linked List	python3
+708	Insert into a Cyclic Sorted List	python
+709	To Lower Case	python3
+710	Random Pick with Blacklist	python3
+711	Number of Distinct Islands II	python3
+712	Minimum ASCII Delete Sum for Two Strings	python3
+713	Subarray Product Less Than K	python3
+714	Best Time to Buy and Sell Stock with Transaction Fee	python3
+715	Range Module	python3
+716	Max Stack	python3
+717	1-bit and 2-bit Characters	python3
+718	Maximum Length of Repeated Subarray	python3
+719	Find K-th Smallest Pair Distance	python3
+720	Longest Word in Dictionary	python3
+721	Accounts Merge	python3
+722	Remove Comments	python3
+723	Candy Crush	python3
+724	Find Pivot Index	python3
+725	Split Linked List in Parts	python3
+726	Number of Atoms	python3
+727	Minimum Window Subsequence	python3
+728	Self Dividing Numbers	python3
+729	My Calendar I	python3
+730	Count Different Palindromic Subsequences	python3
+731	My Calendar II	python3
+732	My Calendar III	python3
+733	Flood Fill	python3
+734	Sentence Similarity	python3
+735	Asteroid Collision	python3
+736	Parse Lisp Expression	python3
+737	Sentence Similarity II	python3
+738	Monotone Increasing Digits	python3
+739	Daily Temperatures	python3
+740	Delete and Earn	python3
+741	Cherry Pickup	python3
+742	Closest Leaf in a Binary Tree	python3
+743	Network Delay Time	python3
+744	Find Smallest Letter Greater Than Target	python3
+745	Prefix and Suffix Search	python3
+746	Min Cost Climbing Stairs	python3
+747	Largest Number At Least Twice of Others	python3
+748	Shortest Completing Word	python3
+749	Contain Virus	python3
+750	Number Of Corner Rectangles	python3
+751	IP to CIDR	python3
+752	Open the Lock	python3
+753	Cracking the Safe	python3
+754	Reach a Number	python3
+755	Pour Water	python3
+756	Pyramid Transition Matrix	python3
+757	Set Intersection Size At Least Two	python3
+758	Bold Words in String	python3
+759	Employee Free Time	python3
+760	Find Anagram Mappings	python3
+761	Special Binary String	python3
+762	Prime Number of Set Bits in Binary Representation	python3
+763	Partition Labels	python3
+764	Largest Plus Sign	python3
+765	Couples Holding Hands	python3
+766	Toeplitz Matrix	python3
+767	Reorganize String	python3
+768	Max Chunks To Make Sorted II	python3
+769	Max Chunks To Make Sorted	python3
+770	Basic Calculator IV	python3
+771	Jewels and Stones	python3
+772	Basic Calculator III	python3
+773	Sliding Puzzle	python3
+774	Minimize Max Distance to Gas Station	python3
+775	Global and Local Inversions	python3
+776	Split BST	python3
+777	Swap Adjacent in LR String	python3
+778	Swim in Rising Water	python3
+779	K-th Symbol in Grammar	python3
+780	Reaching Points	python3
+781	Rabbits in Forest	python3
+782	Transform to Chessboard	python3
+783	Minimum Distance Between BST Nodes	python3
+784	Letter Case Permutation	python3
+785	Is Graph Bipartite?	python3
+786	K-th Smallest Prime Fraction	python3
+787	Cheapest Flights Within K Stops	python3
+788	Rotated Digits	python3
+789	Escape The Ghosts	python3
+790	Domino and Tromino Tiling	python
+791	Custom Sort String	python3
+792	Number of Matching Subsequences	python3
+793	Preimage Size of Factorial Zeroes Function	python3
+794	Valid Tic-Tac-Toe State	python3
+795	Number of Subarrays with Bounded Maximum	python3
+796	Rotate String	python
+797	All Paths From Source to Target	python3
+798	Smallest Rotation with Highest Score	python3
+799	Champagne Tower	python3
+800	Similar RGB Color	python3
+802	Find Eventual Safe States	python3
+803	Bricks Falling When Hit	python3
+804	Unique Morse Code Words	python3
+805	Split Array With Same Average	python3
+806	Number of Lines To Write String	python3
+807	Max Increase to Keep City Skyline	python3
+808	Soup Servings	python3
+809	Expressive Words	python3
+810	Chalkboard XOR Game	python3
+811	Subdomain Visit Count	python3
+812	Largest Triangle Area	python3
+813	Largest Sum of Averages	python3
+814	Binary Tree Pruning	python3
+815	Bus Routes	python3
+816	Ambiguous Coordinates	python3
+817	Linked List Components	python3
+818	Race Car	python3
+819	Most Common Word	python3
+820	Short Encoding of Words	python3
+821	Shortest Distance to a Character	python3
+822	Card Flipping Game	python3
+823	Binary Trees With Factors	python3
+824	Goat Latin	python3
+825	Friends Of Appropriate Ages	python3
+826	Most Profit Assigning Work	python3
+827	Making A Large Island	python3
+828	Unique Letter String	python3
+829	Consecutive Numbers Sum	python3
+830	Positions of Large Groups	python3
+831	Masking Personal Information	python3
+832	Flipping an Image	python3
+833	Find And Replace in String	python3
+834	Sum of Distances in Tree	python3
+835	Image Overlap	python3
+836	Rectangle Overlap	python3
+837	New 21 Game	python3
+838	Push Dominoes	python3
+839	Similar String Groups	python3
+840	Magic Squares In Grid	python3
+841	Keys and Rooms	python3
+842	Split Array into Fibonacci Sequence	python3
+843	Guess the Word	python3
+844	Backspace String Compare	python3
+845	Longest Mountain in Array	python3
+846	Hand of Straights	python3
+847	Shortest Path Visiting All Nodes	python3
+848	Shifting Letters	python3
+849	Maximize Distance to Closest Person	python3
+850	Rectangle Area II	python3
+851	Loud and Rich	python3
+852	Peak Index in a Mountain Array	python3
+853	Car Fleet	python3
+854	K-Similar Strings	python3
+855	Exam Room	python3
+856	Score of Parentheses	python3
+857	Minimum Cost to Hire K Workers	python3
+858	Mirror Reflection	python3
+859	Buddy Strings	python3
+860	Lemonade Change	python3
+861	Score After Flipping Matrix	python3
+862	Shortest Subarray with Sum at Least K	python3
+863	All Nodes Distance K in Binary Tree	python3
+864	Shortest Path to Get All Keys	python3
+865	Smallest Subtree with all the Deepest Nodes	python3
+866	Prime Palindrome	python3
+867	Transpose Matrix	python3
+868	Binary Gap	python3
+869	Reordered Power of 2	python3
+870	Advantage Shuffle	python3
+871	Minimum Number of Refueling Stops	python3
+872	Leaf-Similar Trees	python3
+873	Length of Longest Fibonacci Subsequence	python3
+874	Walking Robot Simulation	python3
+875	Koko Eating Bananas	python3
+876	Middle of the Linked List	python3
+877	Stone Game	python3
+878	Nth Magical Number	python3
+879	Profitable Schemes	python3
+880	Decoded String at Index	python3
+881	Boats to Save People	python3
+882	Reachable Nodes In Subdivided Graph	python3
+883	Projection Area of 3D Shapes	python3
+884	Uncommon Words from Two Sentences	python3
+885	Spiral Matrix III	python3
+886	Possible Bipartition	python3
+887	Super Egg Drop	python3
+888	Fair Candy Swap	python3
+889	Construct Binary Tree from Preorder and Postorder Traversal	python3
+890	Find and Replace Pattern	python3
+891	Sum of Subsequence Widths	python3
+892	Surface Area of 3D Shapes	python3
+893	Groups of Special-Equivalent Strings	python3
+894	All Possible Full Binary Trees	python3
+895	Maximum Frequency Stack	python3
+896	Monotonic Array	python3
+897	Increasing Order Search Tree	python3
+898	Bitwise ORs of Subarrays	python3
+899	Orderly Queue	python3
+900	RLE Iterator	python3
+901	Online Stock Span	python3
+902	Numbers At Most N Given Digit Set	python3
+903	Valid Permutations for DI Sequence	python3
+904	Fruit Into Baskets	python3
+905	Sort Array By Parity	python3
+906	Super Palindromes	python3
+907	Sum of Subarray Minimums	python3
+908	Smallest Range I	python3
+909	Snakes and Ladders	python3
+910	Smallest Range II	python3
+911	Online Election	python3
+912	Sort an Array	python3
+913	Cat and Mouse	python3
+914	X of a Kind in a Deck of Cards	python3
+915	Partition Array into Disjoint Intervals	python3
+916	Word Subsets	python3
+917	Reverse Only Letters	python3
+918	Maximum Sum Circular Subarray	python3
+919	Complete Binary Tree Inserter	python3
+920	Number of Music Playlists	python3
+921	Minimum Add to Make Parentheses Valid	python3
+922	Sort Array By Parity II	python3
+923	3Sum With Multiplicity	python3
+924	Minimize Malware Spread	python3
+925	Long Pressed Name	python3
+926	Flip String to Monotone Increasing	python3
+927	Three Equal Parts	python3
+928	Minimize Malware Spread II	python3
+929	Unique Email Addresses	python3
+930	Binary Subarrays With Sum	python3
+931	Minimum Falling Path Sum	python3
+932	Beautiful Array	python3
+933	Number of Recent Calls	python3
+934	Shortest Bridge	python3
+935	Knight Dialer	python3
+936	Stamping The Sequence	python3
+937	Reorder Data in Log Files	python3
+938	Range Sum of BST	python3
+939	Minimum Area Rectangle	python3
+940	Distinct Subsequences II	python3
+941	Valid Mountain Array	python3
+942	DI String Match	python3
+943	Find the Shortest Superstring	python3
+944	Delete Columns to Make Sorted	python3
+945	Minimum Increment to Make Array Unique	python3
+946	Validate Stack Sequences	python3
+947	Most Stones Removed with Same Row or Column	python3
+948	Bag of Tokens	python3
+949	Largest Time for Given Digits	python3
+950	Reveal Cards In Increasing Order	python3
+951	Flip Equivalent Binary Trees	python3
+952	Largest Component Size by Common Factor	python3
+953	Verifying an Alien Dictionary	python3
+954	Array of Doubled Pairs	python3
+955	Delete Columns to Make Sorted II	python3
+956	Tallest Billboard	python3
+957	Prison Cells After N Days	python3
+958	Check Completeness of a Binary Tree	python3
+959	Regions Cut By Slashes	python3
+960	Delete Columns to Make Sorted III	python3
+961	N-Repeated Element in Size 2N Array	python3
+962	Maximum Width Ramp	python3
+963	Minimum Area Rectangle II	python3
+964	Least Operators to Express Number	python3
+965	Univalued Binary Tree	python3
+966	Vowel Spellchecker	python3
+967	Numbers With Same Consecutive Differences	python3
+968	Binary Tree Cameras	python3
+969	Pancake Sorting	python3
+970	Powerful Integers	python3
+971	Flip Binary Tree To Match Preorder Traversal	python3
+972	Equal Rational Numbers	python3
+973	K Closest Points to Origin	python3
+974	Subarray Sums Divisible by K	python3
+975	Odd Even Jump	python3
+976	Largest Perimeter Triangle	python3
+977	Squares of a Sorted Array	python3
+978	Longest Turbulent Subarray	python3
+979	Distribute Coins in Binary Tree	python3
+980	Unique Paths III	python3
+981	Time Based Key-Value Store	python3
+982	Triples with Bitwise AND Equal To Zero	python3
+983	Minimum Cost For Tickets	python3
+984	String Without AAA or BBB	python3
+985	Sum of Even Numbers After Queries	python3
+986	Interval List Intersections	python3
+987	Vertical Order Traversal of a Binary Tree	python3
+988	Smallest String Starting From Leaf	python3
+989	Add to Array-Form of Integer	python3
+990	Satisfiability of Equality Equations	python3
+991	Broken Calculator	python3
+992	Subarrays with K Different Integers	python
+993	Cousins in Binary Tree	python3
+994	Rotting Oranges	python3
+995	Minimum Number of K Consecutive Bit Flips	python3
+996	Number of Squareful Arrays	python3
+997	Find the Town Judge	python3
+998	Maximum Binary Tree II	python3
+999	Available Captures for Rook	python3
+1000	Minimum Cost to Merge Stones	python3
+1001	Grid Illumination	python3
+1002	Find Common Characters	python3
+1003	Check If Word Is Valid After Substitutions	python3
+1004	Max Consecutive Ones III	python3
+1005	Maximize Sum Of Array After K Negations	python3
+1006	Clumsy Factorial	python3
+1007	Minimum Domino Rotations For Equal Row	python3
+1008	Construct Binary Search Tree from Preorder Traversal	python3
+1009	Complement of Base 10 Integer	python3
+1010	Pairs of Songs With Total Durations Divisible by 60	python3
+1011	Capacity To Ship Packages Within D Days	python3
+1012	Numbers With Repeated Digits	python3
+1013	Partition Array Into Three Parts With Equal Sum	python3
+1014	Best Sightseeing Pair	python3
+1015	Smallest Integer Divisible by K	python3
+1016	Binary String With Substrings Representing 1 To N	python3
+1017	Convert to Base -2	python3
+1018	Binary Prefix Divisible By 5	python3
+1019	Next Greater Node In Linked List	python3
+1020	Number of Enclaves	python3
+1021	Remove Outermost Parentheses	python3
+1022	Sum of Root To Leaf Binary Numbers	python3
+1023	Camelcase Matching	python3
+1024	Video Stitching	python3
+1025	Divisor Game	python3
+1026	Maximum Difference Between Node and Ancestor	python3
+1027	Longest Arithmetic Sequence	python3
+1028	Recover a Tree From Preorder Traversal	python3
+1029	Two City Scheduling	python3
+1030	Matrix Cells in Distance Order	python3
+1031	Maximum Sum of Two Non-Overlapping Subarrays	python3
+1032	Stream of Characters	python3
+1033	Moving Stones Until Consecutive	python3
+1034	Coloring A Border	python3
+1035	Uncrossed Lines	python3
+1036	Escape a Large Maze	python3
+1037	Valid Boomerang	python3
+1038	Binary Search Tree to Greater Sum Tree	python3
+1039	Minimum Score Triangulation of Polygon	python3
+1040	Moving Stones Until Consecutive II	python3
+1041	Robot Bounded In Circle	python3
+1042	Flower Planting With No Adjacent	python3
+1043	Partition Array for Maximum Sum	python3
+1044	Longest Duplicate Substring	python3
+1046	Last Stone Weight	python3
+1047	Remove All Adjacent Duplicates In String	python3
+1048	Longest String Chain	python3
+1049	Last Stone Weight II	python3
+1051	Height Checker	python3
+1052	Grumpy Bookstore Owner	python3
+1053	Previous Permutation With One Swap	python3
+1054	Distant Barcodes	python3
+1055	Shortest Way to Form String	python3
+1056	Confusing Number	python3
+1057	Campus Bikes	python3
+1058	Minimize Rounding Error to Meet Target	python3
+1059	All Paths from Source Lead to Destination	python3
+1060	Missing Element in Sorted Array	python3
+1061	Lexicographically Smallest Equivalent String	python3
+1062	Longest Repeating Substring	python3
+1063	Number of Valid Subarrays	python3
+1064	Fixed Point	python3
+1065	Index Pairs of a String	python3
+1066	Campus Bikes II	python3
+1071	Greatest Common Divisor of Strings	python3
+1072	Flip Columns For Maximum Number of Equal Rows	python3
+1074	Number of Submatrices That Sum to Target	python3
+1078	Occurrences After Bigram	python3
+1079	Letter Tile Possibilities	python3
+1080	Insufficient Nodes in Root to Leaf Paths	python3
+1081	Smallest Subsequence of Distinct Characters	python3
+1085	Sum of Digits in the Minimum Number	python3
+1086	High Five	python3
+1087	Brace Expansion	python3
+1088	Confusing Number II	python3
+1089	Duplicate Zeros	python3
+1090	Largest Values From Labels	python3
+1091	Shortest Path in Binary Matrix	python3
+1092	Shortest Common Supersequence	python3
+1093	Statistics from a Large Sample	python3
+1094	Car Pooling	python3
+1095	Find in Mountain Array	python3
+1096	Brace Expansion II	python3
+1099	Two Sum Less Than K	python3
+1100	Find K-Length Substrings With No Repeated Characters	python3
+1101	The Earliest Moment When Everyone Become Friends	python3
+1102	Path With Maximum Minimum Value	python3
+1103	Distribute Candies to People	python3
+1104	Path In Zigzag Labelled Binary Tree	python3
+1105	Filling Bookcase Shelves	python3
+1106	Parsing A Boolean Expression	python3
+1108	Defanging an IP Address	python3
+1109	Corporate Flight Bookings	python3
+1110	Delete Nodes And Return Forest	python3
+1111	Maximum Nesting Depth of Two Valid Parentheses Strings	python3
+1118	Number of Days in a Month	python3
+1119	Remove Vowels from a String	python3
+1120	Maximum Average Subtree	python3
+1121	Divide Array Into Increasing Sequences	python3
+1122	Relative Sort Array	python3
+1123	Lowest Common Ancestor of Deepest Leaves	python3
+1124	Longest Well-Performing Interval	python3
+1125	Smallest Sufficient Team	python3
+1128	Number of Equivalent Domino Pairs	python3
+1129	Shortest Path with Alternating Colors	python3
+1130	Minimum Cost Tree From Leaf Values	python3
+1131	Maximum of Absolute Value Expression	python3
+1133	Largest Unique Number	python3
+1134	Armstrong Number	python3
+1135	Connecting Cities With Minimum Cost	python3
+1136	Parallel Courses	python3
+1137	N-th Tribonacci Number	python3
+1138	Alphabet Board Path	python3
+1139	Largest 1-Bordered Square	python3
+1140	Stone Game II	python3
+1143	Longest Common Subsequence	python3
+1144	Decrease Elements To Make Array Zigzag	python3
+1145	Binary Tree Coloring Game	python3
+1146	Snapshot Array	python3
+1147	Longest Chunked Palindrome Decomposition	python3
+1150	Check If a Number Is Majority Element in a Sorted Array	python3
+1151	Minimum Swaps to Group All 1's Together	python3
+1152	Analyze User Website Visit Pattern	python3
+1153	String Transforms Into Another String	python3
+1154	Day of the Year	python3
+1155	Number of Dice Rolls With Target Sum	python3
+1156	Swap For Longest Repeated Character Substring	python3
+1157	Online Majority Element In Subarray	python3
+1160	Find Words That Can Be Formed by Characters	python3
+1161	Maximum Level Sum of a Binary Tree	python3
+1162	As Far from Land as Possible	python3
+1163	Last Substring in Lexicographical Order	python3
+1165	Single-Row Keyboard	python3
+1166	Design File System	python3
+1167	Minimum Cost to Connect Sticks	python3
+1168	Optimize Water Distribution in a Village	python3
+1169	Invalid Transactions	python3
+1170	Compare Strings by Frequency of the Smallest Character	python3
+1172	Dinner Plate Stacks	python3
+1175	Prime Arrangements	python3
+1176	Diet Plan Performance	python3
+1177	Can Make Palindrome from Substring	python3
+1178	Number of Valid Words for Each Puzzle	python3
+1180	Count Substrings with Only One Distinct Letter	python3
+1181	Before and After Puzzle	python3
+1182	Shortest Distance to Target Color	python3
+1184	Distance Between Bus Stops	python3
+1185	Day of the Week	python3
+1186	Maximum Subarray Sum with One Deletion	python3
+1187	Make Array Strictly Increasing	python3
+1189	Maximum Number of Balloons	python3
+1190	Reverse Substrings Between Each Pair of Parentheses	python3
+1191	K-Concatenation Maximum Sum	python3
+1196	How Many Apples Can You Put into the Basket	python3
+1197	Minimum Knight Moves	python3
+1198	Find Smallest Common Element in All Rows	python3
+1199	Minimum Time to Build Blocks	python3
+1200	Minimum Absolute Difference	python3
+1201	Ugly Number III	python3
+1202	Smallest String With Swaps	python3
+1203	Sort Items by Groups Respecting Dependencies	python3
+1207	Unique Number of Occurrences	python3
+1208	Get Equal Substrings Within Budget	python3
+1209	Remove All Adjacent Duplicates in String II	python3
+1210	Minimum Moves to Reach Target with Rotations	python3
+1213	Intersection of Three Sorted Arrays	python3
+1214	Two Sum BSTs	python3
+1215	Stepping Numbers	python3
+1216	Valid Palindrome III	python3
+1217	Play with Chips	python3
+1218	Longest Arithmetic Subsequence of Given Difference	python3
+1219	Path with Maximum Gold	python3
+1220	Count Vowels Permutation	python3
+1221	Split a String in Balanced Strings	python3
+1222	Queens That Can Attack the King	python3
+1223	Dice Roll Simulation	python3
+1224	Maximum Equal Frequency	python3
+1227	Airplane Seat Assignment Probability	python3
+1228	Missing Number In Arithmetic Progression	python3
+1229	Meeting Scheduler	python3
+1230	Toss Strange Coins	python3
+1231	Divide Chocolate	python3
+1232	Check If It Is a Straight Line	python3
+1233	Remove Sub-Folders from the Filesystem	python3
+1234	Replace the Substring for Balanced String	python3
+1235	Maximum Profit in Job Scheduling	python3
+1236	Web Crawler	python3
+1237	Find Positive Integer Solution for a Given Equation	python3
+1238	Circular Permutation in Binary Representation	python3
+1239	Maximum Length of a Concatenated String with Unique Characters	python3
+1240	Tiling a Rectangle with the Fewest Squares	python3
+1243	Array Transformation	python3
+1244	Design A Leaderboard	python3
+1245	Tree Diameter	python3
+1246	Palindrome Removal	python3
+1247	Minimum Swaps to Make Strings Equal	python3
+1248	Count Number of Nice Subarrays	python3
+1249	Minimum Remove to Make Valid Parentheses	python3
+1250	Check If It Is a Good Array	python3
+1252	Cells with Odd Values in a Matrix	python3
+1253	Reconstruct a 2-Row Binary Matrix	python3
+1254	Number of Closed Islands	python3
+1255	Maximum Score Words Formed by Letters	python3
+1256	Encode Number	python3
+1257	Smallest Common Region	python3
+1258	Synonymous Sentences	python3
+1259	Handshakes That Don't Cross	python3
+1260	Shift 2D Grid	python3
+1261	Find Elements in a Contaminated Binary Tree	python3
+1262	Greatest Sum Divisible by Three	python3
+1263	Minimum Moves to Move a Box to Their Target Location	python3
+Built With
+Python ?? where simple is better than complex.
