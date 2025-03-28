@@ -11,3 +11,7 @@ https://www.youtube.com/watch?v=QcCISY-OOeU&list=PL5smYbP6KikObRFD1C0Kh9wrIhWfbS
 Mastering SQL Server: Top Questions to Ace Your Interview | SQL interview questions
 
 https://www.youtube.com/watch?v=vCmaaebvcnk&list=PL5smYbP6KikMb1S8jX8_eBBrirsT4Iznp
+
+https://leetcode.ca/all/problems.html
+
+https://leetcode.ca/all/2.html
