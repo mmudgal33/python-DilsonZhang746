@@ -1,0 +1,1677 @@
+dsa-using-python
+/dynamic_arrays.ipynb
+
+
+import ctypes
+# to create C type ka array
+     
+
+class MeraList:
+
+  def __init__(self):
+    self.size = 1
+    self.n = 0
+    # create a C type ka array with size -> self.size
+    self.A = self.__make_array(self.size)
+
+  def __len__(self):
+    return self.n
+
+  def append(self,item):
+    # check if vacant
+    if self.n == self.size:
+      # array is full -> resize
+      self.__resize(self.size*2)
+
+    self.A[self.n] = item
+    self.n = self.n + 1
+
+  def pop(self):
+    if self.n == 0:
+      return 'Empty List'
+    print(self.A[self.n-1])
+    self.n = self.n - 1
+
+  def clear(self):
+    self.n = 0
+    self.size = 1
+
+  def find(self,item):
+
+    for i in range(self.n):
+      if self.A[i] == item:
+        return i
+    return 'ValueError - not in list'
+
+  def insert(self,pos,item):
+
+    if self.n == self.size:
+      self.__resize(self.size*2)
+
+    for i in range(self.n,pos,-1):
+      self.A[i] = self.A[i-1]
+
+    self.A[pos] = item
+    self.n = self.n + 1
+
+  def remove(self,item):
+    # search and get pos
+    pos = self.find(item)
+    if type(pos) == int:
+      # delete
+      self.__delitem__(pos)
+    else:
+      return pos
+
+  def __resize(self,new_capacity):
+    # create a new array with new capacity
+    B = self.__make_array(new_capacity)
+    self.size = new_capacity
+    # copy the content of old array to new one
+    for i in range(self.n):
+      B[i] = self.A[i]
+    # reassign A
+    self.A = B
+
+  def __str__(self):
+    result = ''
+    for i in range(self.n):
+      result = result + str(self.A[i]) + ','
+
+    return '[' + result[:-1] + ']'
+
+  def __getitem__(self,index):
+
+    if 0<= index < self.n:
+      return self.A[index]
+    else:
+      return 'IndexError'
+
+  def __delitem__(self,pos):
+    # delete pos wala item
+    if 0<= pos < self.n:
+      for i in range(pos,self.n-1):
+        self.A[i] = self.A[i+1]
+
+      self.n = self.n - 1
+
+  def __make_array(self,capacity):
+    # referential array(C type)
+    return (capacity*ctypes.py_object)()
+     
+
+L = MeraList()
+     
+
+L.append(1)
+L.append('hello')
+L.append(False)
+L.append(4.5)
+     
+
+print(L)
+     
+[1,False]
+
+L.remove(4.5)
+     
+'ValueError - not in list'
+
+L = [10,20,30]
+L
+     
+[10, 20, 30]
+
+L.remove(200)
+     
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-166-94e77ffffe0d> in <module>()
+----> 1 L.remove(200)
+
+ValueError: list.remove(x): x not in list
+
+L
+     
+[10]
+
+
+
+
+
+
+
+dsa-using-python
+/Linked_List.ipynb
+     
+
+
+
+class Node:
+
+  def __init__(self,value):
+    self.data = value
+    self.next = None
+     
+
+a = Node(1)
+b = Node(2)
+c = Node(3)
+     
+
+print(c.data)
+     
+3
+
+a.next = b
+b.next = c
+     
+
+print(c.next)
+     
+None
+
+int(0x7fde268dfdd0)
+     
+140592106307024
+
+class Node:
+
+  def __init__(self,value):
+    self.data = value
+    self.next = None
+     
+
+class LinkedList:
+
+  def __init__(self):
+
+    # Empty Linked List
+    self.head = None
+    # no of nodes in the LL
+    self.n = 0
+
+  def __len__(self):
+    return self.n
+
+  def insert_head(self,value):
+
+    # new node
+    new_node = Node(value)
+
+    # create connection
+    new_node.next = self.head
+
+    # reassign head
+    self.head = new_node
+
+    # increment n
+    self.n = self.n + 1
+
+  def __str__(self):
+
+    curr = self.head
+
+    result = ''
+
+    while curr != None:
+      result = result + str(curr.data) + '->'
+      curr = curr.next
+
+    return result[:-2]
+
+  def append(self,value):
+
+    new_node = Node(value)
+
+    if self.head == None:
+      # empty
+      self.head = new_node
+      self.n = self.n + 1
+      return
+
+    curr = self.head
+
+    while curr.next != None:
+      curr = curr.next
+
+    # you are at the last node
+    curr.next = new_node
+    self.n = self.n + 1
+
+  def insert_after(self,after,value):
+
+    new_node = Node(value)
+
+    curr = self.head
+
+    while curr != None:
+      if curr.data == after:
+        break
+      curr = curr.next
+
+    if curr != None:
+      new_node.next = curr.next
+      curr.next = new_node
+      self.n = self.n + 1
+    else:
+      return 'Item not found'
+
+  def clear(self):
+    self.head = None
+    self.n = 0
+
+  def delete_head(self):
+
+    if self.head == None:
+      # empty
+      return 'Empty LL'
+
+    self.head = self.head.next
+    self.n = self.n - 1
+
+  def pop(self):
+
+    if self.head == None:
+      # empty
+      return 'Empty LL'
+
+    curr = self.head
+
+    # kya linked list me 1 item hai?
+    if curr.next == None:
+      # head hi hoga(delete from head)
+      return self.delete_head()
+      
+
+    while curr.next.next != None:
+      curr = curr.next
+
+    # curr -> 2nd last node
+    curr.next = None
+    self.n = self.n - 1
+
+  def remove(self,value):
+
+    if self.head == None:
+      return 'Empty LL'
+
+    if self.head.data == value:
+      # you want to remove the head node
+      return self.delete_head()
+
+    curr = self.head
+
+    while curr.next != None:
+      if curr.next.data == value:
+        break
+      curr = curr.next
+
+    # 2 cases item mil gaya
+    # item nai mila
+    if curr.next == None:
+      # item nai mila
+      return 'Not Found'
+    else:
+      curr.next = curr.next.next
+      self.n = self.n - 1
+
+  def search(self,item):
+
+    curr = self.head
+    pos = 0
+
+    while curr != None:
+      if curr.data == item:
+        return pos
+      curr = curr.next
+      pos = pos + 1
+
+    return 'Not Found'
+
+  def __getitem__(self,index):
+
+    curr = self.head
+    pos = 0
+
+    while curr != None:
+      if pos == index:
+        return curr.data
+      curr = curr.next
+      pos = pos + 1
+
+    return 'IndexError'
+
+
+    
+
+    
+
+    
+     
+
+L = LinkedList()
+     
+
+L.insert_head(1)
+L.append(2)
+L.append(3)
+L.delete_head()
+L.insert_head(4)
+     
+
+print(L)
+     
+4->4->1->2->3->2->3
+
+L[4]
+     
+'IndexError'
+
+print(L)
+     
+
+
+     
+
+dsa-using-python
+/hashing_linear_probing.ipynb
+
+
+
+class Dictionary:
+
+  def __init__(self, size):
+    self.size = size
+    self.slots = [None] * self.size
+    self.data = [None] * self.size
+
+  def put(self, key, value):
+    hash_value = self.hash_function(key)
+
+    if self.slots[hash_value] == None:
+      self.slots[hash_value] = key
+      self.data[hash_value] = value
+
+    else:
+
+      if self.slots[hash_value] == key:
+        self.data[hash_value] = value
+      else:
+        new_hash_value = self.rehash(hash_value)
+
+        while self.slots[new_hash_value] != None and self.slots[new_hash_value] != key:
+          new_hash_value = self.rehash(new_hash_value)
+
+        if self.slots[new_hash_value] == None:
+          self.slots[new_hash_value] = key
+          self.data[new_hash_value] = value
+        else:
+          self.data[new_hash_value] = value
+
+  def get(self, key):
+    start_position = self.hash_function(key)
+    current_position = start_position
+
+    while self.slots[current_position] != None:
+
+      if self.slots[current_position] == key:
+        return self.data[current_position]
+      
+      current_position = self.rehash(current_position)
+
+      if current_position == start_position:
+        return "Not Found"
+
+    return "None wala Not Found"
+
+  def __str__(self):
+
+    for i in range(len(self.slots)):
+      if self.slots[i] != None:
+        print(self.slots[i],":",self.data[i],end=' ')
+
+    return ""
+
+  def __getitem__(self,key):
+    return self.get(key)
+
+  def __setitem__(self,key,value):
+    self.put(key,value)
+  
+  def rehash(self, old_hash):
+    return (old_hash + 1) % self.size
+
+
+  def hash_function(self, key):
+
+    return abs(hash(key)) % self.size
+
+     
+
+hash(123)
+     
+123
+
+abs(hash("python")) % 5
+     
+1
+
+hash(1.5)
+     
+1152921504606846977
+
+hash((1,2,3))
+     
+2528502973977326415
+
+D1 = Dictionary(3)
+     
+
+print(D1.slots)
+print(D1.data)
+     
+[None, None, None]
+[None, None, None]
+
+D1['python'] = 56
+     
+
+D1['c'] = 1000
+     
+
+D1["dtjtr"]
+     
+'None wala Not Found'
+
+print(D1)
+     
+c : 1000 python : 56 
+
+D1[[1,2,3]] = "Hello"
+     
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-60-9b2a45268947> in <module>()
+----> 1 D1[[1,2,3]] = "Hello"
+
+<ipython-input-55-7e03fb1343e4> in __setitem__(self, key, value)
+     57 
+     58   def __setitem__(self,key,value):
+---> 59     self.put(key,value)
+     60 
+     61   def rehash(self, old_hash):
+
+<ipython-input-55-7e03fb1343e4> in put(self, key, value)
+      7 
+      8   def put(self, key, value):
+----> 9     hash_value = self.hash_function(key)
+     10 
+     11     if self.slots[hash_value] == None:
+
+<ipython-input-55-7e03fb1343e4> in hash_function(self, key)
+     65   def hash_function(self, key):
+     66 
+---> 67     return abs(hash(key)) % self.size
+
+TypeError: unhashable type: 'list'
+
+D2 = {[1,2,3]:"Hello"}
+     
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-61-49cc6c3db29c> in <module>()
+----> 1 D2 = {[1,2,3]:"Hello"}
+
+TypeError: unhashable type: 'list'
+
+
+     
+
+dsa-using-python
+/hashing_via_chaining.ipynb
+
+
+
+class Node:
+
+  def __init__(self,key,value):
+    self.key = key
+    self.value = value
+    self.next = None
+     
+
+class LL:
+
+  def __init__(self):
+    self.head = None
+
+  def add(self, key, value):
+
+    new_node = Node(key, value)
+
+    if self.head == None:
+      self.head = new_node
+    else:
+
+      temp = self.head
+
+      while temp.next != None:
+        temp = temp.next
+
+      temp.next = new_node
+
+  def delete_head(self):
+
+    if self.head == None:
+      return "Empty"
+    else:
+      self.head = self.head.next
+
+  def remove(self, key):
+    if self.head.key == key:
+      self.delete_head()
+      return 
+
+    if self.head == None:
+      return "Empty"
+    else:
+
+      temp = self.head
+
+      while temp.next != None:
+        if temp.next.key == key:
+          break
+        temp = temp.next
+
+      if temp.next == None:
+        return "Not Found"
+      else:
+        temp.next = temp.next.next
+        
+
+  def traverse(self):
+
+    temp = self.head
+
+    while temp != None:
+
+      print(temp.key,"-->",temp.value," ", end=" ")
+      temp = temp.next
+
+  def size(self):
+
+    temp = self.head
+    counter = 0
+
+    while temp != None:
+
+      counter += 1
+      temp = temp.next
+
+    return counter
+
+  def search(self,key):
+
+    temp = self.head
+    pos = 0
+
+    while temp != None:
+
+      if temp.key == key:
+        return pos
+
+      temp = temp.next
+      pos += 1
+
+    return -1
+
+  def get_node_at_index(self,index):
+
+    temp = self.head
+    counter = 0
+
+    while temp is not None:
+
+      if counter == index:
+        return temp
+      temp = temp.next
+      counter+=1
+
+     
+
+class Dictionary:
+
+  def __init__(self, capacity):
+
+    self.capacity = capacity
+    self.size = 0
+    # create array of LL
+    self.buckets = self.make_array(self.capacity)
+
+  def make_array(self,capacity):
+
+    L = []
+    for i in range(capacity):
+      L.append(LL())
+    return L
+
+  def __setitem__(self,key,value):
+    self.put(key,value)
+
+  def __getitem__(self,key):
+    return self.get(key)
+
+  def __delitem__(self,key):
+
+    bucket_index = self.hash_function(key)
+
+    self.buckets[bucket_index].remove(key)
+
+  def __str__(self):
+
+    for i in self.buckets:
+      i.traverse()
+
+    return ""
+
+  def __len__(self):
+    return self.size
+
+
+  def get(self,key):
+
+    bucket_index = self.hash_function(key)
+
+    res = self.buckets[bucket_index].search(key)
+
+    if res == -1:
+      return "Not Present"
+    else:
+      node = self.buckets[bucket_index].get_node_at_index(res)
+      return node.value
+
+
+  def put(self, key, value):
+
+    bucket_index = self.hash_function(key)
+
+    node_index = self.get_node_index(bucket_index, key)
+
+    if node_index == -1:
+      # insert
+      self.buckets[bucket_index].add(key,value)
+      self.size+=1
+
+      load_factor = self.size/self.capacity
+      print(load_factor)
+
+      if (load_factor >= 2):
+        self.rehash()
+    else:
+      # update
+      node = self.buckets[bucket_index].get_node_at_index(node_index)
+      node.value = value
+
+  def rehash(self):
+    self.capacity = self.capacity * 2
+    old_buckets = self.buckets
+    self.size = 0
+    self.buckets = self.make_array(self.capacity)
+
+    for i in old_buckets:
+      for j in range(i.size()):
+        node = i.get_node_at_index(j)
+        key_item = node.key
+        value_item = node.value
+        self.put(key_item,value_item)
+
+
+
+  def get_node_index(self,bucket_index, key):
+
+    node_index = self.buckets[bucket_index].search(key)
+
+    return node_index
+
+  def hash_function(self,key):
+    return abs(hash(key)) % self.capacity
+
+
+     
+
+# get items
+# traverse
+# delete
+     
+
+L = []
+
+for i in range(3):
+  L.append(LL())
+     
+
+L
+     
+[<__main__.LL at 0x7f9d69437cc0>,
+ <__main__.LL at 0x7f9d69437da0>,
+ <__main__.LL at 0x7f9d69437eb8>]
+
+type(L[0])
+     
+__main__.LL
+
+L = [LL()] * 3
+     
+
+L
+     
+[<__main__.LL at 0x7f9d693902b0>,
+ <__main__.LL at 0x7f9d693902b0>,
+ <__main__.LL at 0x7f9d693902b0>]
+
+L = LL()
+     
+
+L.add(2,3)
+     
+
+L.add(4,5)
+     
+
+L.add(6,7)
+     
+
+L.traverse()
+     
+2 --> 3   4 --> 5   6 --> 7   
+
+L.get_node_at_index(0).key
+     
+2
+
+D1 = Dictionary(3)
+     
+
+D1.put("c",20000)
+     
+0.3333333333333333
+
+D1["java"]
+     
+'Not Present'
+
+del D1["java"]
+     
+
+D1.put("Java",56)
+     
+0.5
+
+D1 = Dictionary(4)
+     
+
+D1.put("php",34)
+     
+0.6666666666666666
+
+D1["matlab"] = 45
+     
+1.0
+
+print(D1)
+     
+php --> 34   matlab --> 45   c --> 20000   
+
+len(D1)
+     
+3
+
+
+     
+
+dsa-using-python
+/queue_LL_implemetation.ipynb
+
+
+
+class Node:
+
+  def __init__(self,value):
+
+    self.data = value
+    self.next = None
+     
+
+class Queue:
+
+  def __init__(self):
+    self.front = None
+    self.rear = None
+
+  def enqueue(self,value):
+
+    new_node = Node(value)
+
+    if self.front == None:
+      self.front = new_node
+      self.rear = new_node
+
+    else:
+      self.rear.next = new_node
+      self.rear = new_node
+
+  def dequeue(self):
+
+    if self.front == None:
+      return "Queue empty"
+    else:
+      self.front = self.front.next
+
+  def is_empty(self):
+    return self.front == None
+
+  def front_item(self):
+    if (not self.is_empty()):
+      return self.front.data
+    else:
+      return "Empty queue"
+
+  def rear_item(self):
+    if (not self.is_empty()):
+      return self.rear.data
+    else:
+      return "Empty queue"
+    
+
+  def traverse(self):
+
+    temp = self.front
+
+    while temp is not None:
+      print(temp.data,end=' ')
+      temp = temp.next
+
+     
+
+q = Queue()
+     
+
+q.enqueue(3)
+q.enqueue(4)
+q.enqueue(5)
+q.enqueue(7)
+     
+
+q.traverse()
+     
+
+q.dequeue()
+     
+'Queue empty'
+
+q.enqueue(8)
+     
+
+q.is_empty()
+     
+False
+
+q.front_item()
+     
+4
+
+q.rear_item()
+     
+7
+
+q.dequeue()
+     
+
+def check_balanced_parenthesis(s):
+    stk = Stack()
+    for item in s:
+        if item == '(':
+            stk.push(item)
+        elif item == '{':
+            stk.push(item)
+        elif item == '[':
+            stk.push(item)
+        elif item == ')':
+            if stk.peek() == '(':
+                stk.pop()
+            else:
+                return False
+        elif item == '}':
+            if stk.peek() == '{':
+                stk.pop()
+            else:
+                return False
+        elif item == ']':
+            if stk.peek() == '[':
+                stk.pop()
+            else:
+                return False
+        else:
+            continue
+            
+    return stk.is_empty()
+
+s="{[(a+b) + (c+d)]}"
+print(check_balanced_parenthesis(s))
+
+     
+
+dsa-using-python
+/searching_sorting.ipynb
+
+
+
+# Linear Searching
+# Binary
+
+# Sleep Sort
+# Monkey Sort
+# Bubble Sort
+# Selection
+# Merge Sort
+# Quick Sort
+# Insertion Sort
+     
+
+# Linear Search
+
+# Brute Force
+
+def linear_search(arr,item):
+
+  for i in range(len(arr)):
+
+    if arr[i] == item:
+      return i
+
+  return -1
+     
+
+arr = [12,34,56,1,67,100,47,99]
+
+linear_search(arr,121)
+     
+-1
+
+# Time Complexity is O(N)
+# No sorting required
+     
+
+# Binary Search
+
+# Sorted Array 
+
+def binary_search(arr, low, high, item):
+
+  #print("low = ",low,"high = ",high,end=' ')
+
+  if low <= high:
+    # search
+
+    mid = (low + high)//2
+
+    #print("mid value is",arr[mid])
+
+    if arr[mid] == item:
+      return mid
+    elif arr[mid] > item:
+      return binary_search(arr, low, mid-1,item)
+    else:
+      return binary_search(arr,mid+1,high,item)
+  else:
+    return -1
+     
+
+arr = [12,24,35,46,57,68,80,99,100]
+print(binary_search(arr,0,len(arr)-1,-5))
+     
+-1
+
+# Sorting
+
+def is_sorted(arr):
+
+  sorted = True
+
+  for i in range(len(arr) - 1):
+    if arr[i]>arr[i+1]:
+      sorted = False
+  
+  return sorted
+     
+
+arr = [1,2,3,4,8,6]
+is_sorted(arr)
+     
+False
+
+# Monkey sort
+
+import random
+a=[1,2,3,4]
+random.shuffle(a)
+a
+     
+[2, 1, 3, 4]
+
+import time
+def monkey_sort(arr):
+
+  while not is_sorted(arr):
+    time.sleep(1)
+    random.shuffle(arr)
+    print(arr)
+  print(arr)
+     
+
+a = [12,24,11,56,34,20]
+monkey_sort(a)
+     
+[24, 20, 11, 56, 12, 34]
+[11, 34, 12, 56, 20, 24]
+[20, 11, 24, 12, 34, 56]
+[24, 20, 34, 56, 11, 12]
+[56, 34, 12, 20, 11, 24]
+[34, 12, 11, 20, 56, 24]
+[56, 34, 20, 12, 11, 24]
+[11, 20, 34, 56, 24, 12]
+[24, 12, 11, 34, 56, 20]
+[20, 56, 11, 24, 34, 12]
+[56, 12, 24, 20, 11, 34]
+[56, 20, 24, 34, 11, 12]
+[56, 20, 24, 11, 34, 12]
+[56, 12, 24, 20, 34, 11]
+[11, 12, 20, 24, 34, 56]
+[11, 12, 20, 24, 34, 56]
+
+12 24 45 5 16
+     
+
+5 12 16 24 45
+     
+
+def bubble_sort(arr):
+
+  for i in range(len(arr) - 1):
+    flag = 0
+    for j in range(len(arr) - 1 - i):
+      if arr[j] > arr[j+1]:
+        arr[j],arr[j+1] = arr[j+1],arr[j]
+        flag =1
+
+    if flag == 0:
+      break
+  
+  return arr
+     
+
+arr = [23,12,34,11,100,56,78]
+bubble_sort(arr)
+     
+[11, 12, 23, 34, 56, 78, 100]
+
+def selection_sort(arr):
+
+  for i in range(len(arr) - 1):
+
+    min = i
+
+    for j in range(i+1,len(arr)):
+      if arr[j] < arr[min]:
+        min = j
+    
+    arr[i],arr[min] = arr[min],arr[i]
+
+  return arr
+
+
+     
+
+arr = [23,12,34,11,100,56,78]
+selection_sort(arr)
+     
+1 pass Current min is 23
+Current item under observation 12
+Current item is less than min
+Now the min has become 12
+Current item under observation 34
+Current item under observation 11
+Current item is less than min
+Now the min has become 11
+Current item under observation 100
+Current item under observation 56
+Current item under observation 78
+[11, 12, 34, 23, 100, 56, 78]
+**************************************************
+2 pass Current min is 12
+Current item under observation 34
+Current item under observation 23
+Current item under observation 100
+Current item under observation 56
+Current item under observation 78
+[11, 12, 34, 23, 100, 56, 78]
+**************************************************
+3 pass Current min is 34
+Current item under observation 23
+Current item is less than min
+Now the min has become 23
+Current item under observation 100
+Current item under observation 56
+Current item under observation 78
+[11, 12, 23, 34, 100, 56, 78]
+**************************************************
+4 pass Current min is 34
+Current item under observation 100
+Current item under observation 56
+Current item under observation 78
+[11, 12, 23, 34, 100, 56, 78]
+**************************************************
+5 pass Current min is 100
+Current item under observation 56
+Current item is less than min
+Now the min has become 56
+Current item under observation 78
+[11, 12, 23, 34, 56, 100, 78]
+**************************************************
+6 pass Current min is 100
+Current item under observation 78
+Current item is less than min
+Now the min has become 78
+[11, 12, 23, 34, 56, 78, 100]
+**************************************************
+[11, 12, 23, 34, 56, 78, 100]
+
+L = []
+
+import random
+
+for i in range(10000):
+  L.append(random.randint(1,10000))
+     
+
+len(L)
+     
+10000
+
+L1 = L[:]
+# cloning
+     
+
+import time
+
+start = time.time()
+bubble_sort(L)
+print("Time taken",time.time() - start,"secs")
+     
+Time taken 0.0018186569213867188 secs
+
+start = time.time()
+selection_sort(L1)
+print("Time taken",time.time() - start,"secs")
+
+# Not Adaptive
+     
+Time taken 3.4115519523620605 secs
+
+# Merge Sort
+     
+
+def merge_arrays(arr1,arr2):
+
+  i = 0
+  j = 0
+
+  new_arr = []
+
+  while i
+
+arr1 = [1,2,6,7,8]
+arr2 = [2,3,5]
+     
+
+merge_arrays(arr1,arr2)
+     
+[1, 2, 2, 3, 5, 6, 7, 8]
+
+def merge_sort(arr):
+
+  mid = len(arr)//2
+
+  left = arr[:mid]
+  right = arr[mid:]
+
+  if len(left) == 1 and len(right) == 1:
+    return merge_arrays(left,right)
+  else:
+    merge_sort(left)
+    merge_sort(right)
+     
+
+[2,5,1,6,4,7,9,0]
+left = [2,5,1,6]
+right = [4,7,9,0]
+
+merge sort on left
+left1 = [2,5]
+right1 = [1,6]
+
+merge on left1
+left2 = [2]
+right2 = [5]
+
+     
+  File "<ipython-input-1-58c9a36702c2>", line 5
+    merge sort on left
+             ^
+SyntaxError: invalid syntax
+
+def quick_sort(arr):
+
+  if len(arr) <= 1:
+    return arr
+
+  pivot = arr.pop()
+
+  items_left = []
+  items_right = []
+
+  for item in arr:
+    if item < pivot:
+      items_left.append(item)
+    else:
+      items_right.append(item)
+
+  return quick_sort(items_left) + [pivot] + quick_sort(items_right)
+
+
+
+     
+
+arr = [2,1,4,6,3,7,5]
+quick_sort(arr)
+     
+[1, 2, 3, 4, 5, 6, 7]
+
+def quick_sort(arr,low,high):
+
+  if len(arr) == 1:
+    return arr
+
+  if low < high:
+
+    pi = partition(arr,low,high)
+
+    quick_sort(arr,low,pi-1)
+    quick_sort(arr,pi+1,high)
+     
+
+def partition(arr,low,high):
+
+  i = low - 1
+  pivot = arr[high]
+
+  for j in range(low,high):
+
+    if arr[j] <= pivot:
+      i+=1
+      arr[i],arr[j] = arr[j],arr[i]
+  arr[i+1],arr[high] = arr[high],arr[i+1]
+
+  return i+1
+     
+
+arr = [10, 7, 8, 9, 1, 5] 
+n = len(arr) 
+quick_sort(arr, 0, n-1)
+print(arr)
+     
+[1, 5, 7, 8, 9, 10]
+
+
+     
+
+dsa-using-python
+/stacks_using_arrays.ipynb
+
+
+
+
+L = [1,2,3,4]
+     
+
+L
+     
+[1, 2, 3, 4]
+
+L.append(5)
+     
+
+L
+     
+[1, 2, 3, 4, 5]
+
+L.pop()
+     
+5
+
+L
+     
+[1, 2, 3, 4]
+
+L[-1]
+     
+4
+
+class Stack:
+
+  def __init__(self,size):
+    self.size = size
+    self.__stack = [None] * self.size
+    self.top = -1
+
+  def push(self,value):
+
+    if self.top == self.size - 1:
+      return "Overflow"
+    else:
+      self.top+=1
+      self.stack[self.top] = value
+
+  def pop(self):
+
+    if self.top == -1:
+      return "Empty"
+    else:
+      data = self.stack[self.top]
+      self.top-=1
+      print(data)
+
+  def traverse(self):
+
+    for i in range(self.top + 1):
+      print(self.stack[i],end=' ')
+
+
+
+     
+
+s = Stack(3)
+     
+
+s.stack
+     
+[4, 5, 6]
+
+s.push(4)
+     
+
+s.push(5)
+     
+
+s.push(6)
+     
+
+s.pop()
+     
+6
+
+s.pop()
+     
+5
+
+s.pop()
+     
+4
+
+s.pop()
+     
+'Empty'
+
+s.traverse()
+     
+5 
+
+s.push(5)
+     
+
+
+     
+
+dsa-using-python
+/stacks_using_linkedlists.ipynb
+
+
+
+class Node:
+
+  def __init__(self,value):
+    self.data = value
+    self.next = None
+     
+
+class Stack:
+
+  def __init__(self):
+    self.top = None
+
+  def push(self, value):
+
+    new_node = Node(value)
+
+    new_node.next = self.top
+
+    self.top = new_node
+
+  def pop(self):
+
+    if self.top is None:
+      return "Stack Empty"
+    else:
+      data = self.top.data
+      self.top = self.top.next
+      return data
+
+  def is_empty(self):
+    return self.top == None
+
+  def peek(self):
+
+    if self.top is None:
+      return "Stack Empty"
+    else:
+      return self.top.data
+
+  def traverse(self):
+
+    temp = self.top
+
+    while temp is not None:
+      print(temp.data,end=' ')
+      temp = temp.next
+
+  def size(self):
+
+    temp = self.top
+    counter = 0
+
+    while temp is not None:
+      temp = temp.next
+      counter+=1
+
+    return counter
+
+
+
+  
+     
+
+def reverse_string(string):
+  s = Stack()
+  for i in string:
+
+    s.push(i)
+
+  res = ""
+
+  while (not s.is_empty()):
+    res = res + s.pop()
+
+  print(res)
+
+     
+
+reverse_string("Haldia")
+     
+aidlaH
+
+def text_editor(text,pattern):
+
+  u = Stack()
+  r = Stack()
+
+  for i in text:
+    u.push(i)
+
+  for i in pattern:
+
+    if i == 'u':
+      data = u.pop()
+      r.push(data)
+    else:
+      data = r.pop()
+      u.push(data)
+
+  res = ""
+
+  while(not u.is_empty()):
+    res = u.pop() + res
+
+  print(res)
+     
+
+text_editor("Hello","uurruuuur")
+     
+He
+
+s.peek()
+     
+2
+
+def brackets(expr):
+
+  s = Stack()
+
+  for i in expr:
+
+    if i == '(':
+      s.push(i)
+    elif i == ')':
+      if s.peek() == '(':
+        s.pop()
+      else:
+        print("Imbalanced")
+        return 
+
+  if (s.is_empty()):
+    print("Balanced")
+  else:
+    print("Imbalanced")
+
+
+     
+
+L = [
+     [0,1,0,0],
+     [0,0,1,1],
+     [1,0,0,1],
+     [0,0,0,0]
+]
+     
+
+def celebrity(L):
+
+  s = Stack()
+
+  for i in range(len(L)):
+    s.push(i)
+
+  while s.size() >= 2:
+
+    i = s.pop()
+    j = s.pop()
+
+    if L[i][j] == 0:
+      # j is not a celebrity
+      s.push(i)
+    else:
+      # i is not a celebrity
+      s.push(j)
+
+  cel = s.pop()
+
+  for i in range(len(L)):
+
+    if i != cel:
+
+      if L[i][cel] != 1 or L[cel][i] != 0:
+        print("No celebrity")
+        return
+  print("Celebrity is",cel)
+
+     
+
+celebrity(L)
+     
+No celebrity
+
+s=Stack()
+s.push(1)
+s.push(2)
+s.push(3)
+
+s.size()
+     
+3
+
+L
+     
+[[0, 1, 0, 1], [0, 0, 1, 1], [1, 0, 0, 1], [0, 0, 0, 0]]
+
+i = 3
+j = 2
+
+L[i][j]
+     
+1
+
+a = Stack()
+b = Stack()
+     
+
+def enqueue_stack(value):
+  a.push(value)
+
+def dequeue_stack():
+
+  if not b.is_empty():
+    b.pop()
+  else:
+    if a.is_empty():
+      print("Empty queue")
+    else:
+      while(not a.is_empty()):
+        data = a.pop()
+        b.push(data)
+
+      b.pop()
+
+     
+
+
+     
